@@ -1,0 +1,161 @@
+---
+title: 'What is a Single Page Application'
+date: '2021-2-23'
+author: 'Mattia Pomelli'
+excerpt: 'Learn what is a Single Page Applications, how they work, and how they differ from traditional websites.'
+---
+
+Not all websites behave in the same way. Web development has been constantly evolving and in the years many libraries and frameworks came out, providing new approaches and techniques to develop web applications.
+
+A modern approach which has gained popularity in the last years is the Single Page Application model. Single Page Applications have become quite popular thanks to libraries and frameworks like [React](https://reactjs.org/), [Angular](https://angular.io/) and [Vue](https://vuejs.org/), which adopt their principles as their default behavior.
+
+This article will be an overview of what Single Page Applications are, how they differ from traditional websites and how they work behind the scenes.
+
+## Traditional websites
+
+Traditional websites are made of multiple pages, which the browser downloads as the user visits different parts of the website.
+
+Any time the user clicks on an internal link the url changes and a new page is requested to the server. The server responds with an HTML file which contains exactly the content of the requested page, which is then rendered by the browser.
+
+You can notice that any time the url changes a loading spinner appears next to the document title. This shows that a new page is being requested and then loaded by the browser.
+
+<Image
+  alt={`Spinner`}
+  src={`/static/images/single-page-applications/spinner.gif`}
+  width={882}
+  height={479}
+/>
+
+## Single Page Applications
+
+A **Single Page Application** (or SPA) is a web application which can be used and consulted from a single page.
+
+This doesn't mean that they can't have multiple sections like an Homepage, About page, etc..
+
+It means instead that a SPA only **requests to the server a single page**. And no matter how many links we click to navigate the website. No other page will ever be requested other than the first one, because **it is always the current page which is dynamically rewritten** in response to user actions.
+
+This is possible thanks to JavaScript. Single Page Applications contain a lot of JavaScript code which is responsible for creating the elements which compose the page, and reorganize them to respond to user actions.
+
+For example, when the user clicks on a link JavaScript observes a change in the URL and modifies the content of the page to show the content of the corresponding section of the website.
+
+You can notice that while navigating through a SPA, no loading spinner is ever shown. This makes sense, because the browser is not requesting nor loading any new page, but instead is the **same current page** that is being continuously rewritten and reorganized by JavaScript.
+
+This mechanism is called [Client Side rendering](https://developers.google.com/web/updates/2019/02/rendering-on-the-web), because the creation of the page happens on the client side, that is by a JavaScript script executed in the browser.
+
+Instead we talk about Server Side Rendering when is the server that generates the HTML that makes up the page, and sends it to the client ready to be rendered.
+
+### What SPAs are made of
+
+We've covered in general how a SPA works, but let's understand in more detail what happens behind the scenes.
+
+When we visit a SPA, the server responds with a **single HTML file**, which is almost empty. It doesn't contain any content about the page being visited, but only the skeleton of a typical HTML document and a few more things.
+
+It could look something like this:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="An awesome single page application" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>My Single Page App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script src="/static/js/2.3d193e6f.chunk.js"></script>
+    <script src="/static/js/main.83bc384a.chunk.js"></script>
+  </body>
+</html>
+```
+
+You can notice a few elements which may look not very obvious at first. Let's uncover what they do:
+
+- `noscript` tag: the content inside a [noscript](https://www.w3schools.com/tags/tag_noscript.asp) tag will be displayed only if JavaScript is not enabled in the browser. In fact, as we covered, single page applications require JavaScript in order to work. If a user tries to visit our SPA with JavaScript disabled they will get a message informing them that they need to enable it in order to use the website.
+- empty `root` div: this will be the container of the entire application, where JavaScript code will place the [DOM](https://it.wikipedia.org/wiki/Document_Object_Model) elements which will make up the page. The id doesn't have to be "root" necessarily. The point is that JavaScript needs to identify a container element where all other elements of the page will be appended.
+
+Finally, at the end of the body, a SPA contains one or more `script` tags. They usually have a very weird filename (which allows to use [caching techniques](https://web.dev/http-cache/#invalidating_and_updating_cached_responses)) but they are actually normal JavaScript scripts, and they constitute the core of the entire application.
+All the logic that will handle the generation of the UI resides inside them.
+
+This is what happens. When the browser receives the HTML file from the server it will start parsing it, but nothing will be actually displayed, because the file doesn't contain content at all. When the `script` tags are reached, the browser will request those JavaScript files to the server, and as soon as they are loaded they will handle the creation of all the elements which make up the page and populate the `root` div container with content.
+
+For example, let's see how to create a simple button element and append it to the page with JavaScript.
+
+```js
+// Create the element
+const button = document.createElement('button')
+button.innerText = 'I am a button!'
+
+// Add some styles
+button.style.backgroundColor = '#3372d6'
+button.style.color = '#ffffff'
+button.style.padding = '10px'
+button.style.borderRadius = '8px'
+button.style.border = 'none'
+
+// Append it to the container
+const container = document.getElementById('root')
+container.appendChild(button)
+```
+
+And this is what the result would look like:
+
+<Image
+  alt={`Button`}
+  src={`/static/images/single-page-applications/button.png`}
+  width={680}
+  height={287}
+/>
+
+This doesn't seem too hard, and JavaScript has many more functionalities to create dynamic HTML and [interact with the DOM](https://www.w3schools.com/js/js_htmldom.asp).
+
+But when dealing with complex UI it can get quite repetitive and complicated. This is why SPAs are usually written with JavaScript libraries or frameworks like React, Angular, or Vue which make it very easy to obtain this behavior.
+
+React is my personal favorite choice and the React team has also made a tool called [Create React App](https://create-react-app.dev/), which let's you create a SPA very quickly and with zero configuration.
+
+### Dynamic data
+
+Some pages require to visualize some information dynamically. Their content is not always the same, but depends for example from data saved in a database, so it can possibly change on every request.
+
+In traditional websites is the server which takes care of this. When the page is requested by the client, the server queries the database (or whatever the source of the data is) and populates the page with the obtained data. Then it sends the page to the client, which only has to concern about rendering it.
+
+In a Single Page Applications this process is JavaScript's job again. The page obtained by the server doesn't contain data. It is instead JavaScript which **makes another request to the server to get data** and uses the obtained information (typically in [JSON](https://it.wikipedia.org/wiki/JavaScript_Object_Notation) format) to generate the UI dynamically.
+
+This will typically require some sort of loading screens, to handle temporarily absence of data, while it is being obtained from the server.
+
+### Pros and Cons
+
+Now that you know what a SPA is, and how they work, let's see which are some pros and cons of using them.
+
+**Pros of SPAs**
+
+- They have an extremely **reactive behavior** to user interactions, which gives them an almost native feeling, resulting in great UX.
+- **Less traffic and workload for the server**, which doesn't have to handle page generation, and only has to send a single HTML file to the client.
+- They allow to better **decouple frontend and backend**, UI and data. The server isn't concerned about generating UI, but only needs to respond with data when it is requested.
+
+**Cons of SPAs**
+
+- They don't work without JavaScript.
+- The **first load could be very slow**, because the browser downloads the whole application in one shot, event if the user will only visit a single section of the website.
+- It's complicated to optimize them for good **SEO**.
+
+## Conclusion
+
+We've covered quite a bit of how SPAs and traditional websites work.
+
+I now encourage you to start paying attention on what happens on the sites that you visit, and see if the principles of SPAs apply or not.
+
+For example, what happens when you click on a link? Does a loading a spinner appear? Or it switches to a new page with an extremely fast transition and no loading at all?
+
+You can also try to inspect the page source code (on Chrome you can use Ctrl+U / Cmd+Opt+U). Does it contain the content that you actually see on the page? Or just a bunch of weird named scripts?
+
+The Network tab of browser [Developer Tools](https://developers.google.com/web/tools/chrome-devtools) is another great place to find out what's going on in a website. Do you ever see an HTML document being requested after the first load?
+
+All these questions lead you to the answer of whether you are visiting a SPA or not, and help you to understand what the websites that you visit are doing behind the scenes.
+
+Knowing how websites work is essential to develop better web applications, and being aware that not all of them behave in the same way is part of that. I think it is important to know the various mechanisms and approaches that exist, and that we have at our disposal, so we can make the choice that better fits our needs.
