@@ -14,3 +14,124 @@ body {
   @apply text-main-black dark:text-white;
   @apply font-main;
 }
+
+::selection {
+  @apply bg-main-blue dark:bg-main-light-blue;
+  color: #fefefe;
+}
+
+/* Don't apply styles to next/image in articles */
+.prose img {
+  @apply m-0;
+}
+
+/* Inline Code */
+.prose :not(pre) > code {
+  @apply bg-gray-100 dark:bg-dark-blue-600 py-1 px-1 rounded-md text-pink-600 dark:text-pink-300;
+}
+
+/** Codeblocks **/
+pre[class*='language-'] {
+  @apply bg-dark-blue-600 px-7 py-8 my-2 rounded-xl overflow-x-auto relative;
+  /* background-color: #2e3440; */
+}
+
+code[class*='language-'] {
+  @apply bg-transparent dark:bg-transparent;
+  color: #f8f8f2;
+}
+
+/* Line highlighting */
+.mdx-marker {
+  @apply block -mx-7 px-4 bg-gray-700 border-l-4;
+  border-color: #528bff;
+}
+
+/* Code titles */
+.remark-code-title {
+  @apply text-white px-7 py-3 rounded-t-xl text-sm font-mono font-bold border-b border-gray-400;
+  background-color: #1f2937;
+}
+
+.remark-code-title + pre {
+  @apply mt-0 rounded-t-none;
+}
+
+/* Syntax Highlighting */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #636f88;
+}
+
+.token.punctuation {
+  color: #82b0df;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #89b0d6;
+}
+
+.token.number {
+  color: #ce77bc;
+}
+
+.token.boolean {
+  color: #89b0d6;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #a2db71;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #89b0d6;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+  color: #7ed3eb;
+}
+
+.token.class-name {
+  /* color: #ebcb8b; */
+  color: #db85c9;
+}
+
+.token.keyword {
+  color: #89b0d6;
+}
+
+.token.regex,
+.token.important {
+  color: #ebcb8b;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
