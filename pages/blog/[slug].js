@@ -21,7 +21,7 @@ export default function Post({ source, frontMatter }) {
           <h1 className="text-5xl font-black mb-3 mt-8 tracking-tight">
             {frontMatter.title}
           </h1>
-          <p className="mb-1 text-dark-gray dark:text-light-gray">
+          <p className="mb-1 text-dark-gray dark:text-gray-300">
             <time dateTime={frontMatter.date}>{formattedDate}</time> •{' '}
             {frontMatter.readingTime.text}
           </p>
