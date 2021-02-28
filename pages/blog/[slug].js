@@ -2,6 +2,7 @@ import hydrate from 'next-mdx-remote/hydrate'
 
 import { getAllPostSlugs, getPostBySlug } from '../../lib/mdx'
 import MDXComponents from '../../components/MDXComponents'
+import BlogSeo from '../../components/BlogSeo'
 
 const options = { month: 'short', day: 'numeric', year: 'numeric' }
 
@@ -14,6 +15,7 @@ export default function Post({ source, frontMatter }) {
 
   return (
     <>
+      <BlogSeo {...frontMatter} />
       <article>
         <header className="mb-10">
           <h1 className="text-5xl font-black mb-3 mt-8 tracking-tight">

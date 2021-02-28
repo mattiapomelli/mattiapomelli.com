@@ -1,7 +1,12 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { NextSeo } from 'next-seo'
 
 import BlogPostPreview from '../components/BlogPostPreview'
 import { getSortedPosts } from '../lib/mdx'
+
+const url = 'https://mattiapomelli.com/blog'
+const title = 'Articles – Mattia Pomelli'
+const description = 'Articles about coding and technology.'
 
 export default function Blog({ posts }) {
   const [search, setSearch] = useState('')
@@ -11,6 +16,16 @@ export default function Blog({ posts }) {
 
   return (
     <>
+      <NextSeo
+        title={title}
+        description={description}
+        canonical={url}
+        openGraph={{
+          url,
+          title,
+          description,
+        }}
+      />
       <h1 className="text-5xl font-extrabold mb-3 mt-8 tracking-tight">
         Articles
       </h1>
