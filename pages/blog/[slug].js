@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import hydrate from 'next-mdx-remote/hydrate'
 
 import { getAllPostSlugs, getPostBySlug } from '../../lib/mdx'
@@ -12,6 +13,18 @@ export default function Post({ source, frontMatter }) {
     'en-IN',
     options
   )
+
+  useEffect(() => {
+    const registerView = () =>
+      fetch(`/api/views/${frontMatter.slug}`, {
+        method: 'PUT',
+      })
+
+    // register post view only if is production
+    if (window.location.hostname === 'portfolio.mattiapomelli.vercel.app') {
+      registerView()
+    }
+  }, [frontMatter.slug])
 
   return (
     <>
