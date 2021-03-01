@@ -6,7 +6,7 @@ const projects = [
   {
     title: 'Codeshare',
     description:
-      'A platform where programmers can share code snippets and find solutions to coding problems',
+      'A platform where developers can share their best code snippets and find solutions to coding problems',
     tags: ['Next.js', 'Styled-components', 'GraphQL', 'PostgreSQL', 'Hasura'],
     link: 'https://codeshare.tech/',
     githubLink: 'https://github.com/mattiapomelli/codeshare',
@@ -14,7 +14,7 @@ const projects = [
   {
     title: 'Countrip',
     description:
-      'An interactive map where you can see data and statistics about world countries',
+      'An interactive map showing information and statistics about world countries',
     tags: ['React', 'REST Countries API', 'Leaflet Maps'],
     link: 'https://countrip.netlify.app/',
     githubLink: 'https://github.com/mattiapomelli/countrip',
