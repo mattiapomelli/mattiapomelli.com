@@ -1,10 +1,12 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 module.exports = {
   purge: ['./pages/**/*.js', './components/**/*.js', './layouts/**/*.js'],
   darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
-        main: ['Nunito Sans', 'sans-serif'],
+        main: ['Nunito Sans', ...fontFamily.sans],
         secondary: ['Inter', 'sans-serif'],
       },
       colors: {
@@ -17,7 +19,7 @@ module.exports = {
         'dark-blue-800': '#0E141B',
       },
       gridTemplateColumns: {
-        autofill: 'repeat(auto-fill, minmax(300px, 1fr))',
+        autofill: 'repeat(auto-fill, minmax(250px, 1fr))',
       },
       typography: (theme) => ({
         DEFAULT: {
