@@ -21,7 +21,9 @@ export default function BlogPostPreview({
           <p className="mb-1 text-dark-gray dark:text-gray-300">
             <time dateTime={date}>{formattedDate}</time> • {readingTime.text}
           </p>
-          <p className="text-lg text-dark-gray dark:text-gray-300">{excerpt}</p>
+          <p className="md:text-lg text-dark-gray dark:text-gray-300">
+            {excerpt}
+          </p>
         </article>
       </a>
     </Link>

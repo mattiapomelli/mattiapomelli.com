@@ -9,6 +9,9 @@ module.exports = {
         main: ['Nunito Sans', ...fontFamily.sans],
         secondary: ['Inter', 'sans-serif'],
       },
+      fontSize: {
+        '4.5xl': ['2.5rem', '2.5rem'],
+      },
       colors: {
         'main-blue': '#086DFF',
         'main-light-blue': '#72CAF3',

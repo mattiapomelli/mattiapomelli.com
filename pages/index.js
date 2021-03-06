@@ -24,7 +24,7 @@ const projects = [
 export default function Home({ latestPosts }) {
   return (
     <>
-      <h1 className="text-4xl md:text-6xl font-extrabold mb-4 mt-8 tracking-tight">
+      <h1 className="text-4.5xl md:text-6xl font-extrabold mb-4 mt-8 tracking-tight">
         Hey, I'm Mattia
       </h1>
       <p className="md:text-lg mb-16 ml-0.5 text-dark-gray dark:text-gray-300">
@@ -33,7 +33,7 @@ export default function Home({ latestPosts }) {
         software.
       </p>
 
-      <h3 className="text-4xl md:text-5xl font-extrabold mb-3 mt-8 tracking-tight">
+      <h3 className="text-4.5xl md:text-5xl font-extrabold mb-3 mt-8 tracking-tight">
         Projects
       </h3>
       <p className="md:text-lg ml-0.5 text-dark-gray dark:text-gray-300">
@@ -45,7 +45,7 @@ export default function Home({ latestPosts }) {
         ))}
       </div>
 
-      <h3 className="text-4xl md:text-5xl font-extrabold mb-3 mt-8 tracking-tight">
+      <h3 className="text-4.5xl md:text-5xl font-extrabold mb-3 mt-8 tracking-tight">
         Articles
       </h3>
       <p className="md:text-lg ml-0.5 mb-8 text-dark-gray dark:text-gray-300">
