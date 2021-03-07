@@ -2,7 +2,7 @@ import { NextSeo, ArticleJsonLd } from 'next-seo'
 
 const BlogSeo = ({ slug, title, excerpt, date }) => {
   const publishedTime = new Date(date).toISOString()
-  const url = `https://mattiapomelli.com/blog/${slug}`
+  const url = `https://tiapome.com/blog/${slug}`
 
   return (
     <>

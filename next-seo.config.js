@@ -1,14 +1,14 @@
-const title = 'Mattia Pomelli – Front End Web Developer.'
-const description = 'Front-end web developer and JavaScript enthusiast.'
+const title = 'Mattia Pomelli – Full Stack Web Developer.'
+const description = 'Full Stack web developer and JavaScript enthusiast.'
 
 const SEO = {
   title,
   description,
-  canonical: 'https://mattiapomelli.com',
+  canonical: 'https://tiapome.com',
   openGraph: {
     type: 'website',
     locale: 'en_IE',
-    url: 'https://mattiapomelli.com',
+    url: 'https://tiapome.com',
     title,
     description,
   },

@@ -21,7 +21,7 @@ export default function Post({ source, frontMatter }) {
       })
 
     // register post view only if is production
-    if (window.location.hostname === 'portfolio.mattiapomelli.vercel.app') {
+    if (window.location.hostname === 'tiapome.com') {
       registerView()
     }
   }, [frontMatter.slug])

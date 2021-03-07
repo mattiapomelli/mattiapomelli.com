@@ -4,7 +4,7 @@ import { NextSeo } from 'next-seo'
 import BlogPostPreview from '../components/BlogPostPreview'
 import { getSortedPosts } from '../lib/mdx'
 
-const url = 'https://mattiapomelli.com/blog'
+const url = 'https://tiapome.com/blog'
 const title = 'Articles – Mattia Pomelli'
 const description = 'Articles about coding and technology.'
 
