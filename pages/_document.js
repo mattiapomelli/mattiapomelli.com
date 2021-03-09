@@ -7,13 +7,6 @@ class MyDocument extends Document {
         <Head>
           <link
             rel="preload"
-            href="/fonts/inter-var-latin.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
             href="/fonts/nunito-sans-v6-latin-regular.woff2"
             as="font"
             type="font/woff2"
@@ -29,6 +22,13 @@ class MyDocument extends Document {
           <link
             rel="preload"
             href="/fonts/nunito-sans-v6-latin-900.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/inter-var-latin.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"

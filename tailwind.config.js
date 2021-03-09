@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         main: ['Nunito Sans', ...fontFamily.sans],
-        secondary: ['Inter', 'sans-serif'],
+        secondary: ['Inter', ...fontFamily.sans],
       },
       fontSize: {
         '4.5xl': ['2.5rem', '2.5rem'],
