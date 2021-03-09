@@ -15,7 +15,7 @@ This article will be an overview of what Single Page Applications are, how they 
 
 Traditional websites are made of multiple pages, which the browser downloads as the user visits different parts of the website.
 
-Any time the user clicks on an internal link the url changes and a new page is requested to the server. The server responds with an HTML file which contains exactly the content of the requested page, which is then rendered by the browser.
+Any time the user clicks on an internal link, the url changes and a new page is requested to the server. The server responds with an HTML file containing exactly the content of the requested page, which is then rendered by the browser.
 
 You can notice that any time the url changes a loading spinner appears next to the document title. This shows that a new page is being requested and then loaded by the browser.
 
@@ -34,15 +34,15 @@ This doesn't mean that they can't have multiple sections like an Homepage, About
 
 It means instead that a SPA only **requests to the server a single page**. And no matter how many links we click to navigate the website. No other page will ever be requested other than the first one, because **it is always the current page which is dynamically rewritten** in response to user actions.
 
-This is possible thanks to JavaScript. Single Page Applications contain a lot of JavaScript code which is responsible for creating the elements which compose the page, and reorganize them to respond to user actions.
+This is possible thanks to JavaScript. Single Page Applications contain a lot of JavaScript code which is responsible for creating the elements that compose the page, and reorganize them to respond to user actions.
 
-For example, when the user clicks on a link JavaScript observes a change in the URL and modifies the content of the page to show the content of the corresponding section of the website.
+For example, when the user clicks on a link, JavaScript observes a change in the URL and modifies the content of the page to show the corresponding section of the website.
 
 You can notice that while navigating through a SPA, no loading spinner is ever shown. This makes sense, because the browser is not requesting nor loading any new page, but instead is the **same current page** that is being continuously rewritten and reorganized by JavaScript.
 
 This mechanism is called [Client Side rendering](https://developers.google.com/web/updates/2019/02/rendering-on-the-web), because the creation of the page happens on the client side, that is by a JavaScript script executed in the browser.
 
-Instead we talk about Server Side Rendering when is the server that generates the HTML that makes up the page, and sends it to the client ready to be rendered.
+On the other side we have Server Side Rendering, where the server generates the HTML that makes up the page, and sends it to the client ready to be rendered.
 
 ### What SPAs are made of
 
@@ -116,15 +116,15 @@ This doesn't seem too hard, and JavaScript has many more functionalities to crea
 
 But when dealing with complex UI it can get quite repetitive and complicated. This is why SPAs are usually written with JavaScript libraries or frameworks like React, Angular, or Vue which make it very easy to obtain this behavior.
 
-React is my personal favorite choice and the React team has also made a tool called [Create React App](https://create-react-app.dev/), which let's you create a SPA very quickly and with zero configuration.
+React is my personal favorite choice. The React team has also made a tool called [Create React App](https://create-react-app.dev/), which let's you create a SPA very quickly and with zero configuration.
 
 ### Dynamic data
 
 Some pages require to visualize some information dynamically. Their content is not always the same, but depends for example from data saved in a database, so it can possibly change on every request.
 
-In traditional websites is the server which takes care of this. When the page is requested by the client, the server queries the database (or whatever the source of the data is) and populates the page with the obtained data. Then it sends the page to the client, which only has to concern about rendering it.
+In traditional websites the server takes care of this. When the page is requested by the client, the server queries the database (or whatever the source of the data is) and populates the page with the obtained data. Then it sends the page to the client, which only has to concern about rendering it.
 
-In a Single Page Applications this process is JavaScript's job again. The page obtained by the server doesn't contain data. It is instead JavaScript which **makes another request to the server to get data** and uses the obtained information (typically in [JSON](https://it.wikipedia.org/wiki/JavaScript_Object_Notation) format) to generate the UI dynamically.
+In a Single Page Application this process is JavaScript's job again. The page obtained by the server doesn't contain data. It is instead JavaScript which **makes another request to the server to get data** and uses the obtained information (typically in [JSON](https://it.wikipedia.org/wiki/JavaScript_Object_Notation) format) to generate the UI dynamically.
 
 This will typically require some sort of loading screens, to handle temporarily absence of data, while it is being obtained from the server.
 
