@@ -10,6 +10,7 @@ const prettier = require('prettier')
     'data/**/*.mdx',
     '!pages/_*.js',
     '!pages/api',
+    '!pages/404.js',
   ])
 
   const sitemap = `
