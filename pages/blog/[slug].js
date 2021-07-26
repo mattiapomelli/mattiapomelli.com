@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import hydrate from 'next-mdx-remote/hydrate'
+import { MDXRemote } from 'next-mdx-remote'
 
 import { getAllPostSlugs, getPostBySlug } from '../../lib/mdx'
 import MDXComponents from '../../components/MDXComponents'
@@ -8,7 +8,6 @@ import BlogSeo from '../../components/BlogSeo'
 const options = { month: 'short', day: 'numeric', year: 'numeric' }
 
 export default function Post({ source, frontMatter }) {
-  const content = hydrate(source, { components: MDXComponents })
   const formattedDate = new Date(frontMatter.date).toLocaleDateString(
     'en-IN',
     options
@@ -40,7 +39,7 @@ export default function Post({ source, frontMatter }) {
           </p>
         </header>
         <div className="prose dark:prose-dark max-w-none font-secondary">
-          {content}
+          <MDXRemote {...source} components={MDXComponents} />
         </div>
       </article>
     </>
