@@ -17,8 +17,6 @@ const BlogPage = ({ posts }: { posts: Post[] }) => {
     post.title.toLowerCase().includes(search.toLowerCase()),
   )
 
-  console.log(posts)
-
   return (
     <>
       <NextSeo
