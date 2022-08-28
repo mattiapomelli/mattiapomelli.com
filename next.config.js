@@ -1,3 +1,5 @@
+const { withContentlayer } = require('next-contentlayer')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -9,21 +11,24 @@ const withMDX = require('@next/mdx')({
   options: {
     remarkPlugins: [],
     rehypePlugins: [],
-    // If you use `MDXProvider`, uncomment the following line.
     providerImportSource: '@mdx-js/react',
   },
 })
 
-module.exports = withMDX({
-  ...nextConfig,
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.svg$/i,
-      issuer: /\.[jt]sx?$/,
-      use: [{ loader: '@svgr/webpack', options: { icon: true } }],
-    })
+module.exports = () => {
+  const plugins = [withContentlayer, withMDX]
+  const config = plugins.reduce((acc, next) => next(acc), {
+    ...nextConfig,
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+    webpack: (config) => {
+      config.module.rules.push({
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: [{ loader: '@svgr/webpack', options: { icon: true } }],
+      })
+      return config
+    },
+  })
 
-    return config
-  },
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-})
+  return config
+}
