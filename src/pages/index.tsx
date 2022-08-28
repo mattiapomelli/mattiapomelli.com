@@ -1,8 +1,9 @@
-import { BlogPost, Project } from 'types'
+import { Post } from 'contentlayer/generated'
 
+import { getLatestPosts } from '@/lib/posts'
+import { Project } from '@/types'
 import BlogPostPreview from '../components/BlogPostPreview'
 import ProjectCard from '../components/ProjectCard'
-import { getSortedPosts } from '../lib/mdx'
 
 const projects: Project[] = [
   {
@@ -23,11 +24,7 @@ const projects: Project[] = [
   },
 ]
 
-interface HomePageProps {
-  latestPosts: BlogPost[]
-}
-
-const HomePage = ({ latestPosts }: HomePageProps) => {
+const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
   return (
     <>
       <h1 className="text-4.5xl md:text-6xl font-extrabold mb-4 mt-8 tracking-tight">
@@ -67,11 +64,10 @@ const HomePage = ({ latestPosts }: HomePageProps) => {
 export default HomePage
 
 export async function getStaticProps() {
-  const posts = getSortedPosts()
-
+  const latestPosts = getLatestPosts()
   return {
     props: {
-      latestPosts: posts.slice(0, 3),
+      latestPosts,
     },
   }
 }

@@ -84,12 +84,12 @@ code[class*='language-'] {
 }
 
 /* Code titles */
-.remark-code-title {
+.rehype-code-title {
   @apply text-white px-7 py-3 rounded-t-xl text-sm font-mono font-bold border-b border-gray-400;
   background-color: #1f2937;
 }
 
-.remark-code-title + pre {
+.rehype-code-title + pre {
   @apply mt-0 rounded-t-none;
 }
 

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const CustomLink = ({ href, ...rest }: { href: string }) => {
+const CustomLink = ({ href, ...rest }: { href?: string }) => {
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'))
 
   if (isInternalLink) {

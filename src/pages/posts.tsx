@@ -1,23 +1,23 @@
 import React, { useState } from 'react'
+import { GetStaticProps } from 'next'
 import { NextSeo } from 'next-seo'
-import { BlogPost } from 'types'
+import { Post } from 'contentlayer/generated'
 
-import BlogPostPreview from '../components/BlogPostPreview'
-import { getSortedPosts } from '../lib/mdx'
+import BlogPostPreview from '@/components/BlogPostPreview'
+import { getAllPosts } from '@/lib/posts'
 
 const url = 'https://tiapome.com/blog'
 const title = 'Articles – Mattia Pomelli'
 const description = 'Articles about coding and technology.'
 
-interface BlogPageProps {
-  posts: BlogPost[]
-}
-
-const BlogPage = ({ posts }: BlogPageProps) => {
+const BlogPage = ({ posts }: { posts: Post[] }) => {
   const [search, setSearch] = useState('')
+
   const filteredPosts = posts.filter((post) =>
     post.title.toLowerCase().includes(search.toLowerCase()),
   )
+
+  console.log(posts)
 
   return (
     <>
@@ -58,7 +58,7 @@ const BlogPage = ({ posts }: BlogPageProps) => {
       </div>
 
       {filteredPosts.map((post) => (
-        <BlogPostPreview key={post.slug} post={post} />
+        <BlogPostPreview key={post._id} post={post} />
       ))}
     </>
   )
@@ -66,12 +66,7 @@ const BlogPage = ({ posts }: BlogPageProps) => {
 
 export default BlogPage
 
-export async function getStaticProps() {
-  const posts = getSortedPosts()
-
-  return {
-    props: {
-      posts,
-    },
-  }
+export const getStaticProps: GetStaticProps = () => {
+  const posts = getAllPosts()
+  return { props: { posts: posts } }
 }
