@@ -1,14 +1,15 @@
 import '../styles/globals.css'
 
-import { ThemeProvider } from 'next-themes'
 import { MDXProvider } from '@mdx-js/react'
+import type { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
+import { ThemeProvider } from 'next-themes'
 
-import MDXComponents from '../components/MDXComponents'
-import Layout from '../components/Layout'
 import SEO from '../../next-seo.config'
+import Layout from '../components/Layout'
+import MDXComponents from '../components/MDXComponents'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
       <MDXProvider components={MDXComponents}>

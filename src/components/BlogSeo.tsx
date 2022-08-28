@@ -1,6 +1,8 @@
-import { NextSeo, ArticleJsonLd } from 'next-seo'
+import { ArticleJsonLd, NextSeo } from 'next-seo'
+import { BlogPostFrontmatter } from 'types'
 
-const BlogSeo = ({ slug, title, excerpt, date }) => {
+const BlogSeo = ({ post }: { post: BlogPostFrontmatter }) => {
+  const { slug, title, excerpt, date } = post
   const publishedTime = new Date(date).toISOString()
   const url = `https://tiapome.com/blog/${slug}`
 
@@ -28,6 +30,8 @@ const BlogSeo = ({ slug, title, excerpt, date }) => {
         publisherName="Mattia Pomelli"
         title={title}
         url={url}
+        images={[]}
+        publisherLogo=""
       />
     </>
   )

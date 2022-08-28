@@ -1,8 +1,10 @@
-import ProjectCard from '../components/ProjectCard'
+import { BlogPost, Project } from 'types'
+
 import BlogPostPreview from '../components/BlogPostPreview'
+import ProjectCard from '../components/ProjectCard'
 import { getSortedPosts } from '../lib/mdx'
 
-const projects = [
+const projects: Project[] = [
   {
     title: 'Codeshare',
     description:
@@ -21,27 +23,31 @@ const projects = [
   },
 ]
 
-export default function Home({ latestPosts }) {
+interface HomePageProps {
+  latestPosts: BlogPost[]
+}
+
+const HomePage = ({ latestPosts }: HomePageProps) => {
   return (
     <>
       <h1 className="text-4.5xl md:text-6xl font-extrabold mb-4 mt-8 tracking-tight">
-        Hey, I'm Mattia
+        Hey, I&apos;m Mattia
       </h1>
       <p className="md:text-lg mb-16 ml-0.5 text-dark-gray dark:text-gray-300">
-        I'm a full stack web developer. I'm always focused on learning modern
-        technologies, and striving to provide value to people through quality
-        software.
+        I&apos;m a full stack web developer. I&apos;m always focused on learning
+        modern technologies, and striving to provide value to people through
+        quality software.
       </p>
 
       <h3 className="text-4.5xl md:text-5xl font-extrabold mb-3 mt-8 tracking-tight">
         Projects
       </h3>
       <p className="md:text-lg ml-0.5 text-dark-gray dark:text-gray-300">
-        Some of the last projects I've been working on
+        Some of the last projects I&apos;ve been working on
       </p>
       <div className="grid grid-cols-1 md:grid-cols-autofill gap-4 mt-6 mb-20">
         {projects.map((project) => (
-          <ProjectCard key={project.title} {...project} />
+          <ProjectCard key={project.title} project={project} />
         ))}
       </div>
 
@@ -49,14 +55,16 @@ export default function Home({ latestPosts }) {
         Articles
       </h3>
       <p className="md:text-lg ml-0.5 mb-8 text-dark-gray dark:text-gray-300">
-        Some articles that I've written about coding and technology
+        Some articles that I&apos;ve written about coding and technology
       </p>
       {latestPosts.map((post) => (
-        <BlogPostPreview key={post.slug} {...post} />
+        <BlogPostPreview key={post.slug} post={post} />
       ))}
     </>
   )
 }
+
+export default HomePage
 
 export async function getStaticProps() {
   const posts = getSortedPosts()

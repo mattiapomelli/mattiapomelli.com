@@ -1,8 +1,8 @@
-import fs from 'fs'
-import path from 'path'
 import { serialize } from 'next-mdx-remote/serialize'
+import fs from 'fs'
 import matter from 'gray-matter'
 import mdxPrism from 'mdx-prism'
+import path from 'path'
 import readingTime from 'reading-time'
 
 import MDXComponents from '../components/MDXComponents'
@@ -47,7 +47,7 @@ export const getAllPostSlugs = () => {
 export const getPostBySlug = async (slug) => {
   const source = fs.readFileSync(
     path.join(postsDirectory, `${slug}.mdx`),
-    'utf8'
+    'utf8',
   )
 
   const { data, content } = matter(source)

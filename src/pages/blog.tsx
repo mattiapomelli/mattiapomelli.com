@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { NextSeo } from 'next-seo'
+import { BlogPost } from 'types'
 
 import BlogPostPreview from '../components/BlogPostPreview'
 import { getSortedPosts } from '../lib/mdx'
@@ -8,10 +9,14 @@ const url = 'https://tiapome.com/blog'
 const title = 'Articles – Mattia Pomelli'
 const description = 'Articles about coding and technology.'
 
-export default function Blog({ posts }) {
+interface BlogPageProps {
+  posts: BlogPost[]
+}
+
+const BlogPage = ({ posts }: BlogPageProps) => {
   const [search, setSearch] = useState('')
   const filteredPosts = posts.filter((post) =>
-    post.title.toLowerCase().includes(search.toLowerCase())
+    post.title.toLowerCase().includes(search.toLowerCase()),
   )
 
   return (
@@ -30,7 +35,7 @@ export default function Blog({ posts }) {
         Articles
       </h1>
       <p className="text-lg mb-5 text-dark-gray dark:text-gray-300">
-        Some articles I've written about coding and tech
+        Some articles I&apos;ve written about coding and tech
       </p>
       <div className="relative  w-full max-w-xs mb-12">
         <input
@@ -53,11 +58,13 @@ export default function Blog({ posts }) {
       </div>
 
       {filteredPosts.map((post) => (
-        <BlogPostPreview key={post.slug} {...post} />
+        <BlogPostPreview key={post.slug} post={post} />
       ))}
     </>
   )
 }
+
+export default BlogPage
 
 export async function getStaticProps() {
   const posts = getSortedPosts()

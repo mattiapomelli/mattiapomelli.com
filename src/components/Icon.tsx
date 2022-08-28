@@ -31,8 +31,13 @@ const icons = {
   link,
 }
 
-const Icon = ({ icon, ...rest }) => {
-  const Path = icons[icon]
+interface IconProps {
+  icon: string
+  className?: string
+}
+
+const Icon = ({ icon, ...rest }: IconProps) => {
+  const Path = icons[icon as keyof typeof icons]
 
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...rest}>

@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
-import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useTheme } from 'next-themes'
 
-export default function Navbar() {
+const Navbar = () => {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
 
@@ -10,7 +10,7 @@ export default function Navbar() {
   useEffect(() => setMounted(true), [])
 
   return (
-    <header className="flex justify-between items-center w-full max-w-3xl mx-auto px-4 px-8 md:px-10 py-12">
+    <header className="flex justify-between items-center w-full max-w-3xl mx-auto px-8 md:px-10 py-12">
       <Link href="/">
         <a>
           <h1 className="font-black text-xl text-main-blue dark:text-main-light-blue">
@@ -56,3 +56,5 @@ export default function Navbar() {
     </header>
   )
 }
+
+export default Navbar

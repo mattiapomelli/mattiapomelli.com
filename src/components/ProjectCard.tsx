@@ -1,12 +1,10 @@
+import { Project } from 'types'
+
 import Icon from './Icon'
 
-export default function ProjectCard({
-  title,
-  description,
-  tags,
-  link,
-  githubLink,
-}) {
+const ProjectCard = ({ project }: { project: Project }) => {
+  const { title, description, tags, link, githubLink } = project
+
   return (
     <div className="border border-gray-200 dark:border-gray-700 rounded-xl p-6 flex flex-col justify-between dark:bg-dark-blue-800">
       <header>
@@ -39,3 +37,5 @@ export default function ProjectCard({
     </div>
   )
 }
+
+export default ProjectCard

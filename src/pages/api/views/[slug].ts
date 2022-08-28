@@ -1,9 +1,16 @@
-import { db, increment } from '../../lib/firebase'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default async (req, res) => {
+import { db, increment } from '../../../lib/firebase'
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse,
+) {
+  const slug = req.query?.slug?.toString() || ''
+
   if (req.method === 'PUT') {
     try {
-      const docRef = db.collection('views').doc(req.query.slug)
+      const docRef = db.collection('views').doc(slug)
 
       const doc = await docRef.get()
 
@@ -18,12 +25,12 @@ export default async (req, res) => {
       })
     } catch (err) {
       return res.status(500).json({
-        error: err.message || 'Something went wrong',
+        error: err || 'Something went wrong',
       })
     }
   } else if (req.method === 'GET') {
     try {
-      const doc = await db.collection('views').doc(req.query.slug).get()
+      const doc = await db.collection('views').doc(slug).get()
 
       if (!doc.exists) {
         return res.status(404).json({
@@ -31,14 +38,14 @@ export default async (req, res) => {
         })
       }
 
-      const views = doc.data().views || 0
+      const views = doc.data()?.views || 0
 
       return res.status(200).json({
         total: views,
       })
     } catch (err) {
       return res.status(500).json({
-        error: err.message || 'Something went wrong',
+        error: err || 'Something went wrong',
       })
     }
   } else {

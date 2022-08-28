@@ -1,17 +1,26 @@
 import { useEffect } from 'react'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
+import { BlogPostFrontmatter, ReadingTime } from 'types'
 
-import { getAllPostSlugs, getPostBySlug } from '../../lib/mdx'
-import MDXComponents from '../../components/MDXComponents'
 import BlogSeo from '../../components/BlogSeo'
+import MDXComponents from '../../components/MDXComponents'
+import { getAllPostSlugs, getPostBySlug } from '../../lib/mdx'
 
-const options = { month: 'short', day: 'numeric', year: 'numeric' }
+interface PostPageProps {
+  source: any
+  frontMatter: BlogPostFrontmatter & {
+    slug: string
+    readingTime: ReadingTime
+  }
+}
 
-export default function Post({ source, frontMatter }) {
-  const formattedDate = new Date(frontMatter.date).toLocaleDateString(
-    'en-IN',
-    options
-  )
+const PostPage = ({ source, frontMatter }: PostPageProps) => {
+  const formattedDate = new Date(frontMatter.date).toLocaleDateString('en-IN', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  })
 
   useEffect(() => {
     const registerView = () =>
@@ -27,7 +36,7 @@ export default function Post({ source, frontMatter }) {
 
   return (
     <>
-      <BlogSeo {...frontMatter} />
+      <BlogSeo post={frontMatter} />
       <article>
         <header className="mb-10">
           <h1 className="text-5xl font-black mb-3 mt-8 tracking-tight">
@@ -46,7 +55,9 @@ export default function Post({ source, frontMatter }) {
   )
 }
 
-export async function getStaticPaths() {
+export default PostPage
+
+export const getStaticPaths: GetStaticPaths = async () => {
   const slugs = getAllPostSlugs()
 
   return {
@@ -59,8 +70,8 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
-  const post = await getPostBySlug(params.slug)
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const post = await getPostBySlug(params?.slug)
 
   return { props: post }
 }

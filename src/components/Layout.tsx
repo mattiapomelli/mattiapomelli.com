@@ -1,7 +1,9 @@
-import Navbar from './Navbar'
-import Footer from './Footer'
+import { ReactNode } from 'react'
 
-export default function Layout({ children }) {
+import Footer from './Footer'
+import Navbar from './Navbar'
+
+const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <div className="h-2 w-full bg-main-blue dark:bg-main-light-blue"></div>
@@ -13,3 +15,5 @@ export default function Layout({ children }) {
     </>
   )
 }
+
+export default Layout
