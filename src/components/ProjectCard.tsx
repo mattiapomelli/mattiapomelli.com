@@ -1,4 +1,5 @@
-import Icon from '@/components/Icon'
+import ExternalLinkIcon from '@/icons/external-link.svg'
+import GithubIcon from '@/icons/github.svg'
 import { Project } from '@/lib/projects'
 
 const ProjectCard = ({ project }: { project: Project }) => {
@@ -10,15 +11,15 @@ const ProjectCard = ({ project }: { project: Project }) => {
     <div className="border border-gray-200 dark:border-gray-700 rounded-xl p-6 flex flex-col justify-between dark:bg-dark-blue-800">
       <header>
         <div className="flex items-center justify-between">
-          <Logo className="w-10 h-10 fill-current" />
+          <Logo className="w-10 h-10" />
           <div className="flex items-center">
             {githubUrl && (
               <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-                <Icon icon="github" className="w-5 h-5 ml-3 fill-current" />
+                <GithubIcon className="w-5 h-5 ml-3" />
               </a>
             )}
             <a href={url} target="_blank" rel="noopener noreferrer">
-              <Icon icon="link" className="w-5 h-5 ml-3 fill-current" />
+              <ExternalLinkIcon className="w-5 h-5 ml-3" />
             </a>
           </div>
         </div>
