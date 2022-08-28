@@ -1,20 +1,23 @@
-import { Project } from 'types'
-
-import Icon from './Icon'
+import Icon from '@/components/Icon'
+import { Project } from '@/lib/projects'
 
 const ProjectCard = ({ project }: { project: Project }) => {
-  const { title, description, tags, link, githubLink } = project
+  const { title, description, tags, url, githubUrl } = project
+
+  const Logo = project.logo
 
   return (
     <div className="border border-gray-200 dark:border-gray-700 rounded-xl p-6 flex flex-col justify-between dark:bg-dark-blue-800">
       <header>
         <div className="flex items-center justify-between">
-          <Icon icon={title.toLowerCase()} className="w-10 h-10 fill-current" />
+          <Logo className="w-10 h-10 fill-current" />
           <div className="flex items-center">
-            <a href={githubLink} target="_blank" rel="noopener noreferrer">
-              <Icon icon="github" className="w-5 h-5 ml-3 fill-current" />
-            </a>
-            <a href={link} target="_blank" rel="noopener noreferrer">
+            {githubUrl && (
+              <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                <Icon icon="github" className="w-5 h-5 ml-3 fill-current" />
+              </a>
+            )}
+            <a href={url} target="_blank" rel="noopener noreferrer">
               <Icon icon="link" className="w-5 h-5 ml-3 fill-current" />
             </a>
           </div>

@@ -1,28 +1,9 @@
 import { Post } from 'contentlayer/generated'
 
 import { getLatestPosts } from '@/lib/posts'
-import { Project } from '@/types'
+import { projects } from '@/lib/projects'
 import BlogPostPreview from '../components/BlogPostPreview'
 import ProjectCard from '../components/ProjectCard'
-
-const projects: Project[] = [
-  {
-    title: 'Codeshare',
-    description:
-      'A platform where developers can share their best code snippets and find solutions to coding problems',
-    tags: ['Next.js', 'Styled-components', 'GraphQL', 'PostgreSQL', 'Hasura'],
-    link: 'https://codeshare.tech/',
-    githubLink: 'https://github.com/mattiapomelli/codeshare',
-  },
-  {
-    title: 'Countrip',
-    description:
-      'An interactive map showing information and statistics about world countries',
-    tags: ['React', 'REST Countries API', 'Leaflet Maps'],
-    link: 'https://countrip.netlify.app/',
-    githubLink: 'https://github.com/mattiapomelli/countrip',
-  },
-]
 
 const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
   return (

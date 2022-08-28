@@ -1,7 +1,7 @@
 import { ArticleJsonLd, NextSeo } from 'next-seo'
-import { BlogPostFrontmatter } from 'types'
+import { Post } from 'contentlayer/generated'
 
-const BlogSeo = ({ post }: { post: BlogPostFrontmatter }) => {
+const BlogSeo = ({ post }: { post: Post }) => {
   const { slug, title, excerpt, date } = post
   const publishedTime = new Date(date).toISOString()
   const url = `https://tiapome.com/blog/${slug}`
