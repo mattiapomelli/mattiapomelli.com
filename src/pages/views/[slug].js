@@ -1,4 +1,4 @@
-import { db, increment } from '../../../lib/firebase'
+import { db, increment } from '../../lib/firebase'
 
 export default async (req, res) => {
   if (req.method === 'PUT') {

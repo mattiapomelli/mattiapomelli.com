@@ -6,7 +6,7 @@ import { DefaultSeo } from 'next-seo'
 
 import MDXComponents from '../components/MDXComponents'
 import Layout from '../components/Layout'
-import SEO from '../next-seo.config'
+import SEO from '../../next-seo.config'
 
 function MyApp({ Component, pageProps }) {
   return (
