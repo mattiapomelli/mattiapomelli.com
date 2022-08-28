@@ -1,18 +1,19 @@
 import { ReactNode } from 'react'
 
+import Container from './Container'
 import Footer from './Footer'
 import Navbar from './Navbar'
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <>
-      <div className="h-2 w-full bg-main-blue dark:bg-main-light-blue"></div>
+    <div className="flex flex-col min-h-screen">
+      <div className="h-2 w-full bg-main-blue dark:bg-main-light-blue" />
       <Navbar />
-      <main className="max-w-3xl mx-auto px-8 md:px-10 pb-14">
-        {children}
-        <Footer />
+      <main className="flex-grow">
+        <Container>{children}</Container>
       </main>
-    </>
+      <Footer />
+    </div>
   )
 }
 
