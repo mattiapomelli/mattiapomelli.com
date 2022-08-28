@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next'
 import { NextSeo } from 'next-seo'
 import { Post } from 'contentlayer/generated'
 
-import BlogPostPreview from '@/components/BlogPostPreview'
+import BlogPostPreview from '@/components/BlogPost/BlogPostPreview'
 import { getAllPosts } from '@/lib/posts'
 
 const url = 'https://tiapome.com/blog'

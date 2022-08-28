@@ -2,7 +2,7 @@ import { Post } from 'contentlayer/generated'
 
 import { getLatestPosts } from '@/lib/posts'
 import { projects } from '@/lib/projects'
-import BlogPostPreview from '../components/BlogPostPreview'
+import BlogPostPreview from '../components/BlogPost/BlogPostPreview'
 import ProjectCard from '../components/ProjectCard'
 
 const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {

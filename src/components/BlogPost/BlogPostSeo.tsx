@@ -1,7 +1,7 @@
 import { ArticleJsonLd, NextSeo } from 'next-seo'
 import { Post } from 'contentlayer/generated'
 
-const BlogSeo = ({ post }: { post: Post }) => {
+const BlogPostSeo = ({ post }: { post: Post }) => {
   const { slug, title, excerpt, date } = post
   const publishedTime = new Date(date).toISOString()
   const url = `https://tiapome.com/blog/${slug}`
@@ -37,4 +37,4 @@ const BlogSeo = ({ post }: { post: Post }) => {
   )
 }
 
-export default BlogSeo
+export default BlogPostSeo

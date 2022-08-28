@@ -2,11 +2,11 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { Post } from 'contentlayer/generated'
 
-import BlogSeo from '@/components/BlogSeo'
+import BlogSeo from '@/components/BlogPost/BlogPostSeo'
 import MDXComponents from '@/components/MDXComponents'
 import { getAllPostSlugs, getPostBySlug } from '@/lib/posts'
 
-const PostPage = ({ post }: { post: Post }) => {
+const BlogPostPage = ({ post }: { post: Post }) => {
   const MDXContent = useMDXComponent(post.body.code)
 
   const formattedDate = new Date(post.date).toLocaleDateString('en-IN', {
@@ -36,7 +36,7 @@ const PostPage = ({ post }: { post: Post }) => {
   )
 }
 
-export default PostPage
+export default BlogPostPage
 
 export const getStaticPaths: GetStaticPaths = () => {
   const slugs = getAllPostSlugs()

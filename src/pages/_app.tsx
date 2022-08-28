@@ -4,8 +4,8 @@ import type { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
 import { ThemeProvider } from 'next-themes'
 
+import Layout from '@/components/Layout/Layout'
 import SEO from '../../next-seo.config'
-import Layout from '../components/Layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
