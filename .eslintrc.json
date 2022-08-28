@@ -1,0 +1,19 @@
+{
+  "extends": ["next/core-web-vitals"],
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "simple-import-sort/imports": ["error", {
+      "groups": [
+        // Side effect imports.
+        ["^\\u0000"],
+        // `react` related packages, `next` related packages, other packages.
+        ["react", "^next", "^@?\\w"],
+        // Absolute imports and other imports such as `@/foo`.
+        // Relative imports
+        // Anything not matched in another group.
+        ["^", "^\\."]
+      ]
+    }],
+    "simple-import-sort/exports": "error"
+  }
+}
