@@ -1,10 +1,10 @@
 import { Post } from 'contentlayer/generated'
 
+import BlogPostPreview from '@/components/BlogPost/BlogPostPreview'
+import ProjectCard from '@/components/ProjectCard'
 import { H1, H3, Text } from '@/components/Text'
 import { getLatestPosts } from '@/lib/posts'
 import { projects } from '@/lib/projects'
-import BlogPostPreview from '../components/BlogPost/BlogPostPreview'
-import ProjectCard from '../components/ProjectCard'
 
 const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
   return (
@@ -25,7 +25,7 @@ const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
         <Text className="mb-6">
           Some of the last projects I&apos;ve been working on
         </Text>
-        <div className="grid grid-cols-1 md:grid-cols-autofill gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] gap-4">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}

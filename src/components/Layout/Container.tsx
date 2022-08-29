@@ -10,7 +10,7 @@ const Container = ({ children, className }: ContainerProps) => {
   return (
     <div
       className={classNames(
-        'w-full max-w-3xl mx-auto px-8 md:px-10',
+        'w-full max-w-3xl mx-auto px-6 md:px-10',
         className,
       )}
     >

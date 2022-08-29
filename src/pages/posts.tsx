@@ -30,14 +30,14 @@ const BlogPage = ({ posts }: { posts: Post[] }) => {
           description,
         }}
       />
-      <H1 className="mb-3">Articles</H1>
+      <H1 className="mt-6 mb-3">Articles</H1>
       <Text className="mb-5">
         Some articles I&apos;ve written about coding and tech
       </Text>
-      <div className="relative w-full max-w-xs mb-12">
+      <div className="relative w-full mb-12">
         <input
           spellCheck="false"
-          className="bg-base-200 py-2 pr-3 rounded-2xl w-full pl-9 outline-none placeholder-text-secondary text-text-primary"
+          className="bg-gray-100 dark:bg-base-200 py-2 pr-3 rounded-2xl w-full pl-9 outline-none placeholder-text-secondary text-text-primary"
           placeholder="Search..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}

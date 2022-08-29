@@ -13,9 +13,6 @@ module.exports = {
         main: ['Nunito Sans', ...fontFamily.sans],
         secondary: ['Inter', ...fontFamily.sans],
       },
-      fontSize: {
-        '4.5xl': ['2.5rem', '2.5rem'],
-      },
       colors: {
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',
@@ -23,9 +20,6 @@ module.exports = {
         'text-secondary': 'var(--text-secondary)',
         'base-100': 'var(--base-100)',
         'base-200': 'var(--base-200)',
-      },
-      gridTemplateColumns: {
-        autofill: 'repeat(auto-fill, minmax(250px, 1fr))',
       },
       typography: (theme) => ({
         DEFAULT: {
