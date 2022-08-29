@@ -1,7 +1,7 @@
+import { H4, TextSmall } from '@/components/Text'
 import ExternalLinkIcon from '@/icons/external-link.svg'
 import GithubIcon from '@/icons/github.svg'
 import { Project } from '@/lib/projects'
-import { H4, TextSmall } from './Text'
 
 const ProjectCard = ({ project }: { project: Project }) => {
   const { title, description, tags, url, githubUrl } = project
