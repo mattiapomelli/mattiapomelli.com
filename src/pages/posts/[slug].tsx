@@ -17,7 +17,7 @@ const BlogPostPage = ({ post }: { post: Post }) => {
       <article>
         <header className="mt-6 mb-10">
           <H1 className="mb-3">{post.title}</H1>
-          <p className="mb-1 text-dark-gray dark:text-gray-300">
+          <p className="mb-1 text-text-secondary">
             <time dateTime={post.date}>{formatDate(post.date)}</time> •{' '}
             {post.readingTime}
           </p>

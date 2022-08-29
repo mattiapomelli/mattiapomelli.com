@@ -38,6 +38,24 @@
   src: local(''), url(/fonts/nunito-sans-v6-latin-900.woff2) format('woff2');
 }
 
+:root {
+  --primary: #086DFF;
+  --secondary: #EDF2F7;
+  --text-primary: #343A40;
+  --text-secondary: #575757;
+  --base-100: #FFFFFF;
+  --base-200: #E5E7EB;
+}
+
+:root.dark {
+  --primary: #72CAF3;
+  --secondary: #151F28;
+  --text-primary: #FFFFFF;
+  --text-secondary: #888888;
+  --base-100: #111111;
+  --base-200: #333333;
+}
+
 html,
 body,
 #__next {
@@ -46,13 +64,13 @@ body,
 
 /* Background and text main color for light and dark mode */
 body {
-  @apply bg-white dark:bg-dark-blue-800;
-  @apply text-main-black dark:text-white;
+  @apply bg-base-100;
+  @apply text-text-primary;
   @apply font-main;
 }
 
 ::selection {
-  @apply bg-main-blue dark:bg-main-light-blue;
+  @apply bg-primary;
   color: #fefefe;
 }
 
@@ -63,13 +81,12 @@ body {
 
 /* Inline Code */
 .prose :not(pre) > code {
-  @apply bg-gray-100 dark:bg-dark-blue-600 py-1 px-1 rounded-md text-pink-600 dark:text-pink-300;
+  @apply bg-gray-100 dark:bg-secondary py-1 px-1 rounded-md text-pink-600 dark:text-pink-300;
 }
 
 /** Codeblocks **/
 pre[class*='language-'] {
-  @apply bg-dark-blue-600 px-7 py-8 my-2 rounded-xl overflow-x-auto relative;
-  /* background-color: #2e3440; */
+  @apply bg-[#151F28] px-7 py-8 my-2 rounded-xl overflow-x-auto relative;
 }
 
 code[class*='language-'] {

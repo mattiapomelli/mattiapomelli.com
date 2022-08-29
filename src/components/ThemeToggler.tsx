@@ -15,7 +15,7 @@ const ThemeToggler = () => {
 
   return (
     <button
-      className="text-main-black dark:text-white p-0.5 rounded-sm focus:outline-none focus:ring focus:border-main-blue"
+      className="text-text-primary p-0.5 rounded-sm focus:outline-none focus:ring focus:border-primary"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
       {mounted &&

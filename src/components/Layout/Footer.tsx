@@ -2,9 +2,9 @@ import Container from './Container'
 
 const Footer = () => {
   return (
-    <footer className="mb-20">
+    <footer className="mb-20 mt-14">
       <Container>
-        <hr className="w-full border-1 border-gray-200 mb-8" />
+        <hr className="w-full border-1 border-base-200 mb-8" />
         <div className="flex gap-10">
           <a
             href="https://github.com/mattiapomelli/"

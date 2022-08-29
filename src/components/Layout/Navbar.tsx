@@ -9,9 +9,7 @@ const Navbar = () => {
       <Container className="flex justify-between items-center">
         <Link href="/">
           <a>
-            <h1 className="font-black text-xl text-main-blue dark:text-main-light-blue">
-              tiapome
-            </h1>
+            <h1 className="font-black text-xl text-primary">tiapome</h1>
           </a>
         </Link>
         <nav className="flex items-center">

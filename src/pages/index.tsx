@@ -38,7 +38,7 @@ const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
         <Text className="mb-6">
           Some articles that I&apos;ve written about coding and technology
         </Text>
-        <div className="flex flex-col gap-8 mb-14">
+        <div className="flex flex-col gap-8">
           {latestPosts.map((post) => (
             <BlogPostPreview key={post.slug} post={post} />
           ))}

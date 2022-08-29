@@ -10,7 +10,7 @@ const BlogPostPreview = ({ post }: { post: Post }) => {
       <a>
         <article>
           <H4 className="mb-1.5">{post.title}</H4>
-          <p className="mb-1 text-dark-gray dark:text-gray-300">
+          <p className="mb-1 text-text-secondary">
             <time dateTime={post.date}>{formatDate(post.date)}</time> •{' '}
             {post.readingTime}
           </p>
