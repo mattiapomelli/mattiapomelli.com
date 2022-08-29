@@ -1,27 +1,20 @@
 import Link from 'next/link'
 import { Post } from 'contentlayer/generated'
 
-const BlogPostPreview = ({ post }: { post: Post }) => {
-  const formattedDate = new Date(post.date).toLocaleDateString('en-IN', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-  })
+import { formatDate } from '@/utils/dates'
+import { H4, Text } from '../Text'
 
+const BlogPostPreview = ({ post }: { post: Post }) => {
   return (
     <Link href={`/posts/${post.slug}`}>
-      <a className="block">
-        <article className="mb-14">
-          <h4 className="font-extrabold text-3xl leading-none mb-2 tracking-tight">
-            {post.title}
-          </h4>
+      <a>
+        <article>
+          <H4 className="mb-2">{post.title}</H4>
           <p className="mb-1 text-dark-gray dark:text-gray-300">
-            <time dateTime={post.date}>{formattedDate}</time> •{' '}
+            <time dateTime={post.date}>{formatDate(post.date)}</time> •{' '}
             {post.readingTime}
           </p>
-          <p className="md:text-lg text-dark-gray dark:text-gray-300">
-            {post.excerpt}
-          </p>
+          <Text>{post.excerpt}</Text>
         </article>
       </a>
     </Link>

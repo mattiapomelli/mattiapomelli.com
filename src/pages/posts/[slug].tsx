@@ -4,27 +4,21 @@ import { Post } from 'contentlayer/generated'
 
 import BlogSeo from '@/components/BlogPost/BlogPostSeo'
 import MDXComponents from '@/components/MDXComponents'
+import { H1 } from '@/components/Text'
 import { getAllPostSlugs, getPostBySlug } from '@/lib/posts'
+import { formatDate } from '@/utils/dates'
 
 const BlogPostPage = ({ post }: { post: Post }) => {
   const MDXContent = useMDXComponent(post.body.code)
-
-  const formattedDate = new Date(post.date).toLocaleDateString('en-IN', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-  })
 
   return (
     <>
       <BlogSeo post={post} />
       <article>
-        <header className="mb-10">
-          <h1 className="text-5xl font-black mb-3 mt-8 tracking-tight">
-            {post.title}
-          </h1>
+        <header className="mt-6 mb-10">
+          <H1 className="mb-3">{post.title}</H1>
           <p className="mb-1 text-dark-gray dark:text-gray-300">
-            <time dateTime={post.date}>{formattedDate}</time> •{' '}
+            <time dateTime={post.date}>{formatDate(post.date)}</time> •{' '}
             {post.readingTime}
           </p>
         </header>
