@@ -1,5 +1,5 @@
 import CodeshareLogo from '@/icons/codeshare.svg'
-import CountripLogo from '@/icons/countrip.svg'
+import CryviaLogo from '@/icons/cryvia.svg'
 
 export interface Project {
   title: string
@@ -12,6 +12,22 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: 'Cryvia',
+    description:
+      'Test your web3 knowledge and win crypto prices participating to live quiz contests',
+    tags: [
+      'Next.js',
+      'Tailwind CSS',
+      'Solidity',
+      'Polygon',
+      'Prisma',
+      'PostgreSQL',
+    ],
+    url: 'https://beta.cryvia.xyz/',
+    githubUrl: 'https://github.com/mattiapomelli/cryvia-contracts',
+    logo: CryviaLogo,
+  },
+  {
     title: 'Codeshare',
     description:
       'A platform where developers can share their best code snippets and find solutions to coding problems',
@@ -19,14 +35,5 @@ export const projects: Project[] = [
     url: 'https://codeshare.tech/',
     githubUrl: 'https://github.com/mattiapomelli/codeshare',
     logo: CodeshareLogo,
-  },
-  {
-    title: 'Countrip',
-    description:
-      'An interactive map showing information and statistics about world countries',
-    tags: ['React', 'REST Countries API', 'Leaflet Maps'],
-    url: 'https://countrip.netlify.app/',
-    githubUrl: 'https://github.com/mattiapomelli/countrip',
-    logo: CountripLogo,
   },
 ]
