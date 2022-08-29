@@ -23,10 +23,7 @@ export const H3 = ({ children, className }: TextProps) => (
 
 export const H4 = ({ children, className }: TextProps) => (
   <h4
-    className={classNames(
-      'text-2xl font-extrabold tracking-tight leading-none',
-      className,
-    )}
+    className={classNames('text-2xl font-extrabold tracking-tight', className)}
   >
     {children}
   </h4>

@@ -9,7 +9,7 @@ const BlogPostPreview = ({ post }: { post: Post }) => {
     <Link href={`/posts/${post.slug}`}>
       <a>
         <article>
-          <H4 className="mb-2">{post.title}</H4>
+          <H4 className="mb-1.5">{post.title}</H4>
           <p className="mb-1 text-dark-gray dark:text-gray-300">
             <time dateTime={post.date}>{formatDate(post.date)}</time> •{' '}
             {post.readingTime}

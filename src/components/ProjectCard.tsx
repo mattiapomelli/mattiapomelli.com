@@ -24,7 +24,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </div>
       </header>
       <main className="flex-grow mt-4">
-        <H4 className="mb-4">{title}</H4>
+        <H4 className="mb-3">{title}</H4>
         <TextSmall>{description}</TextSmall>
       </main>
       <footer>
