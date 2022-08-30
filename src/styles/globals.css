@@ -72,6 +72,11 @@ body {
   color: #fefefe;
 }
 
+/* Prose headings */
+.prose h2, .prose h3 {
+  @apply font-main;
+}
+
 /* Don't apply styles to next/image in articles */
 .prose img {
   @apply m-0;
