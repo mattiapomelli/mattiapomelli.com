@@ -1,56 +1,47 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { db, increment } from '../../../lib/firebase'
+import prisma from '@/lib/prisma'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  const slug = req.query?.slug?.toString() || ''
+  try {
+    const slug = req.query.slug?.toString() || ''
 
-  if (req.method === 'PUT') {
-    try {
-      const docRef = db.collection('views').doc(slug)
-
-      const doc = await docRef.get()
-
-      if (doc.exists) {
-        await docRef.update({ views: increment })
-      } else {
-        await docRef.set({ views: 1 })
-      }
+    if (req.method === 'PUT') {
+      const newOrUpdatedPost = await prisma.post.upsert({
+        where: { slug },
+        create: {
+          slug,
+          views: 1,
+        },
+        update: {
+          views: {
+            increment: 1,
+          },
+        },
+      })
 
       return res.status(200).json({
-        message: 'Views updated',
-      })
-    } catch (err) {
-      return res.status(500).json({
-        error: err || 'Something went wrong',
+        views: newOrUpdatedPost.views,
       })
     }
-  } else if (req.method === 'GET') {
-    try {
-      const doc = await db.collection('views').doc(slug).get()
 
-      if (!doc.exists) {
-        return res.status(404).json({
-          message: 'Document not found',
-        })
+    if (req.method === 'GET') {
+      const post = await prisma.post.findUnique({
+        where: {
+          slug,
+        },
+      })
+
+      if (!post) {
+        return res.status(404).json('Post not found')
       }
 
-      const views = doc.data()?.views || 0
-
-      return res.status(200).json({
-        total: views,
-      })
-    } catch (err) {
-      return res.status(500).json({
-        error: err || 'Something went wrong',
-      })
+      return res.status(200).json({ views: post.views })
     }
-  } else {
-    res.status(400).json({
-      message: 'Method not allowed',
-    })
+  } catch (err) {
+    return res.status(500).json('Something went wrong')
   }
 }
