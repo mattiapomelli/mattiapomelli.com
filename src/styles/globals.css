@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* inter variable font */
+/* Inter variable font */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -13,7 +13,7 @@
     U+2215;
 }
 
-/* nunito-sans-regular - latin */
+/* Nunito Sans font */
 @font-face {
   font-family: 'Nunito Sans';
   font-style: normal;
@@ -38,6 +38,7 @@
   src: local(''), url(/fonts/nunito-sans-v6-latin-900.woff2) format('woff2');
 }
 
+/* Theme */
 :root {
   --primary: #086DFF;
   --secondary: #EDF2F7;
@@ -62,11 +63,8 @@ body,
   min-height: 100vh;
 }
 
-/* Background and text main color for light and dark mode */
 body {
-  @apply bg-base-100;
-  @apply text-text-primary;
-  @apply font-main;
+  @apply bg-base-100 text-text-primary font-main;
 }
 
 ::selection {
@@ -84,33 +82,51 @@ body {
   @apply bg-gray-100 dark:bg-secondary py-1 px-1 rounded-md text-pink-600 dark:text-pink-300;
 }
 
-/** Codeblocks **/
+/** -----  Codeblocks -----  **/
 pre[class*='language-'] {
-  @apply bg-[#151F28] px-7 py-8 my-2 rounded-xl overflow-x-auto relative;
+  @apply bg-[#151F28] px-6 py-6 rounded-xl overflow-x-auto relative;
 }
 
-code[class*='language-'] {
-  @apply bg-transparent dark:bg-transparent;
-  color: #f8f8f2;
-}
-
-/* Line highlighting */
-.mdx-marker {
-  @apply block -mx-7 px-4 bg-gray-700 border-l-4;
-  border-color: #528bff;
+.code-line {
+  @apply block px-6 -mx-6 border-l-4 border-transparent; /* Set placeholder for highlight accent border color to transparent */
 }
 
 /* Code titles */
 .rehype-code-title {
-  @apply text-white px-7 py-3 rounded-t-xl text-sm font-mono font-bold border-b border-gray-400;
-  background-color: #1f2937;
+  @apply bg-[#151F28] text-gray-200 px-6 py-3 font-mono text-sm font-bold border-b border-gray-400 rounded-t-xl;
 }
 
 .rehype-code-title + pre {
   @apply mt-0 rounded-t-none;
 }
 
-/* Syntax Highlighting */
+/* Inserted lines */
+.code-line.inserted {
+  background-color: rgba(16, 185, 129, 0.2); /* Set inserted line (+) color */
+}
+
+/* Deleted lines */
+.code-line.deleted {
+  background-color: rgba(239, 68, 68, 0.2); /* Set deleted line (-) color */
+}
+
+/* Highlighted lines */
+.highlight-line {
+  @apply block px-6 -mx-6  border-l-4 border-blue-500;
+  background-color: rgba(55, 65, 81, 0.5);
+}
+
+.line-number::before {
+  display: inline-block;
+  width: 1rem;
+  text-align: right;
+  margin-right: 16px;
+  margin-left: -8px;
+  color: rgb(156, 163, 175);
+  content: attr(line);
+}
+
+/** -----  Syntax Highlighting -----  **/
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -167,7 +183,6 @@ code[class*='language-'] {
 }
 
 .token.class-name {
-  /* color: #ebcb8b; */
   color: #db85c9;
 }
 
