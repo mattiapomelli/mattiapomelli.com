@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { Post } from 'contentlayer/generated'
@@ -10,6 +11,25 @@ import { formatDate } from '@/utils/dates'
 
 const BlogPostPage = ({ post }: { post: Post }) => {
   const MDXContent = useMDXComponent(post.body.code)
+
+  useEffect(() => {
+    // Don't register view if is not production
+    if (process.env.NEXT_PUBLIC_ENV !== 'production') return
+
+    // Don't register view if it's me 😝
+    if (
+      localStorage.getItem('admin-secret') ===
+      process.env.NEXT_PUBLIC_ADMIN_SECRET
+    )
+      return
+
+    const registerView = () =>
+      fetch(`/api/views/${post.slug}`, {
+        method: 'PUT',
+      })
+
+    registerView()
+  }, [post.slug])
 
   return (
     <>
