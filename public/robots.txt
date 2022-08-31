@@ -1,2 +1,9 @@
+# *
 User-agent: *
+Allow: /
+
+# Host
+Host: https://tiapome.com
+
+# Sitemaps
 Sitemap: https://tiapome.com/sitemap.xml

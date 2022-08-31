@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@prisma/client": "^4.3.0",
@@ -26,6 +27,7 @@
     "eslint-config-next": "^12.2.5",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "globby": "11.0.4",
+    "next-sitemap": "^3.1.21",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "prisma": "^4.3.0",
