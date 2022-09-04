@@ -14,7 +14,7 @@ export const projects: Project[] = [
   {
     title: 'Cryvia',
     description:
-      'Test your web3 knowledge and win crypto prices participating to live quiz contests',
+      'Test your web3 knowledge and win crypto prizes participating to live quiz contests',
     tags: [
       'Next.js',
       'Tailwind CSS',
