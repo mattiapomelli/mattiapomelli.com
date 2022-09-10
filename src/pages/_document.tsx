@@ -4,6 +4,10 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <meta
+          name="twitter:image"
+          content="https://tiapome.com/static/images/banner.png"
+        />
         <link
           rel="preload"
           href="/fonts/nunito-sans-v6-latin-regular.woff2"
