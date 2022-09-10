@@ -53,9 +53,11 @@ const BlogPage = ({ posts }: { posts: Post[] }) => {
         </svg>
       </div>
 
-      {filteredPosts.map((post) => (
-        <BlogPostPreview key={post._id} post={post} />
-      ))}
+      <div className="flex flex-col gap-8">
+        {filteredPosts.map((post) => (
+          <BlogPostPreview key={post._id} post={post} />
+        ))}
+      </div>
     </>
   )
 }
