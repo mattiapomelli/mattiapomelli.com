@@ -16,13 +16,10 @@ const SEO = {
     images: [
       {
         url: image,
+        alt: 'Mattia Pomelli',
+        type: 'image/png',
       },
     ],
-  },
-  twitter: {
-    handle: '@mattiapomelli',
-    site: '@mattiapomelli',
-    cardType: 'summary',
   },
 }
 
