@@ -13,13 +13,16 @@ const SEO = {
     url,
     title,
     description,
-    image,
+    images: [
+      {
+        url: image,
+      },
+    ],
   },
   twitter: {
     handle: '@mattiapomelli',
     site: '@mattiapomelli',
     cardType: 'summary_large_image',
-    image,
   },
 }
 
