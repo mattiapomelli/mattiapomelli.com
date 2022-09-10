@@ -13,9 +13,9 @@ const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
       <div className="mt-6">
         <H1 className="mb-3">Hey, I&apos;m Mattia</H1>
         <Text>
-          I&apos;m a full stack web developer. I&apos;m always focused on
-          learning modern technologies, and striving to provide value to people
-          through quality software.
+          I&apos;m a blockchain and full stack web developer. I&apos;m focused
+          on learning innovative technologies and building software products
+          that give value to people.
         </Text>
       </div>
 
@@ -23,7 +23,7 @@ const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
       <div className="mt-12">
         <H3 className="mb-3">Projects</H3>
         <Text className="mb-6">
-          Some of the last projects I&apos;ve been working on
+          Some of the last projects I&apos;ve been working on.
         </Text>
         <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] gap-4">
           {projects.map((project) => (
@@ -32,11 +32,11 @@ const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
         </div>
       </div>
 
-      {/* Articles */}
+      {/* Posts */}
       <div className="mt-12">
-        <H3 className="mb-3">Articles</H3>
+        <H3 className="mb-3">Posts</H3>
         <Text className="mb-6">
-          Some articles that I&apos;ve written about coding and technology
+          Some posts that I&apos;ve written about coding and web development.
         </Text>
         <div className="flex flex-col gap-8">
           {latestPosts.map((post) => (

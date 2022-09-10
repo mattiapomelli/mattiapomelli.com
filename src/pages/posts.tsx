@@ -8,8 +8,8 @@ import { H1, Text } from '@/components/Text'
 import { getAllPosts } from '@/lib/posts'
 
 const url = 'https://tiapome.com/blog'
-const title = 'Articles – Mattia Pomelli'
-const description = 'Articles about coding and technology.'
+const title = 'Posts – Mattia Pomelli'
+const description = 'Posts about coding and web development.'
 
 const BlogPage = ({ posts }: { posts: Post[] }) => {
   const [search, setSearch] = useState('')
@@ -30,9 +30,9 @@ const BlogPage = ({ posts }: { posts: Post[] }) => {
           description,
         }}
       />
-      <H1 className="mt-6 mb-3">Articles</H1>
+      <H1 className="mt-6 mb-3">Posts</H1>
       <Text className="mb-5">
-        Some articles I&apos;ve written about coding and tech
+        Some posts I&apos;ve written about coding and web development.
       </Text>
       <div className="relative w-full mb-12">
         <input
