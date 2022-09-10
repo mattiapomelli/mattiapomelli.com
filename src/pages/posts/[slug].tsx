@@ -14,7 +14,11 @@ const BlogPostPage = ({ post }: { post: Post }) => {
 
   useEffect(() => {
     // Don't register view if is not production
-    if (process.env.NEXT_PUBLIC_ENV !== 'production') return
+    if (
+      process.env.NEXT_PUBLIC_ENV !== 'production' ||
+      window.location.hostname !== 'tiapome.com'
+    )
+      return
 
     // Don't register view if it's me 😝
     if (
