@@ -4,7 +4,7 @@ import { Post } from 'contentlayer/generated'
 const BlogPostSeo = ({ post }: { post: Post }) => {
   const { slug, title, excerpt, date } = post
   const publishedTime = new Date(date).toISOString()
-  const url = `https://tiapome.com/blog/${slug}`
+  const url = `https://tiapome.com/posts/${slug}`
 
   return (
     <>
