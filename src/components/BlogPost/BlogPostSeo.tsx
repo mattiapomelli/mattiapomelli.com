@@ -20,6 +20,13 @@ const BlogPostSeo = ({ post }: { post: Post }) => {
           url,
           title,
           description: excerpt,
+          images: post.image
+            ? [
+                {
+                  url: `https://tiapome.com/static/images/${post.slug}/${post.image}`,
+                },
+              ]
+            : [],
         }}
       />
       <ArticleJsonLd

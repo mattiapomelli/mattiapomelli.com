@@ -23,6 +23,11 @@ export const Post = defineDocumentType(() => ({
       description: 'The excerpt of the post',
       required: true,
     },
+    image: {
+      type: 'string',
+      description: 'The image of the post',
+      required: false,
+    },
   },
   computedFields: {
     slug: {
