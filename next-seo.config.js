@@ -22,7 +22,7 @@ const SEO = {
   twitter: {
     handle: '@mattiapomelli',
     site: '@mattiapomelli',
-    cardType: 'summary_large_image',
+    cardType: 'summary',
   },
 }
 
