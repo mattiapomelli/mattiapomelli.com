@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import { H4, TextSmall } from '@/components/Text'
 import ExternalLinkIcon from '@/icons/external-link.svg'
 import GithubIcon from '@/icons/github.svg'
@@ -5,8 +7,12 @@ import { Project } from '@/lib/projects'
 
 const ProjectCard = ({ project }: { project: Project }) => {
   const { title, description, tags, url, githubUrl } = project
+  const { logo } = project
 
-  const Logo = project.logo
+  const Logo =
+    typeof logo === 'string'
+      ? () => <Image src={logo} height="40px" width="40px" alt="Project logo" />
+      : project.logo
 
   return (
     <div className="border border-base-200 rounded-xl p-6 flex flex-col">

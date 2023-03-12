@@ -1,3 +1,4 @@
+import CapazLogo from '@/icons/capaz.svg'
 import CodeshareLogo from '@/icons/codeshare.svg'
 import CryviaLogo from '@/icons/cryvia.svg'
 
@@ -7,10 +8,37 @@ export interface Project {
   tags: string[]
   url: string
   githubUrl?: string
-  logo: ({ className }: { className: string }) => JSX.Element
+  logo: string | (({ className }: { className: string }) => JSX.Element)
 }
 
 export const projects: Project[] = [
+  {
+    title: 'BetteRPC',
+    description:
+      'An efficient, decentralized and configurable RPC gateway leveraging a peer-to-peer network.',
+    tags: ['Express', 'Fluence Network'],
+    url: 'https://betterpc.vercel.app/',
+    githubUrl: 'https://github.com/TalentLayer-Labs/betterpc',
+    logo: '/betterpc.png',
+  },
+  {
+    title: 'Capaz',
+    description:
+      'A yield-bearing escrow system, and marketplace for tokenized escrow payments.',
+    tags: ['Solidity', 'React', 'Ethereum'],
+    url: 'https://capazpay.eth.limo/',
+    githubUrl: 'https://github.com/TalentLayer-Labs/capaz',
+    logo: '/capaz.png',
+  },
+  {
+    title: 'Leets',
+    description:
+      'The place to find new music daily, share your discoveries of new hits and support talented emerging artists.',
+    tags: ['MongoDB', 'Next.js', 'Tailwind', 'Typescript'],
+    url: 'https://www.leets.it/',
+    githubUrl: 'https://github.com/valdo99/leets-frontend',
+    logo: '/leets.png',
+  },
   {
     title: 'Cryvia',
     description:
