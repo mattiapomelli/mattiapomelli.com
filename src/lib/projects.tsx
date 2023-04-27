@@ -13,6 +13,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: 'Gumrua',
+    description:
+      'Web3 Gumroad, the easiest way to sell digital products and educational content with crypto.',
+    tags: ['Next.js', 'Monerium', 'Solidity', 'Safe SDK', 'Supabase'],
+    url: 'https://betterpc.vercel.app/',
+    githubUrl: 'https://github.com/TalentLayer-Labs/betterpc',
+    logo: '/gumrua.webp',
+  },
+  {
     title: 'BetteRPC',
     description:
       'An efficient, decentralized and configurable RPC gateway leveraging a peer-to-peer network.',
