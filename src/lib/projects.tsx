@@ -13,6 +13,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: 'Lenschool',
+    description:
+      'A social learning platform to make online education more fun, collaborative and effective.',
+    tags: ['Next.js', 'Lens Protocol', 'KnowledgeLayer', 'Livepeer'],
+    url: 'https://lenschool.vercel.app/',
+    githubUrl: 'https://github.com/mattiapomelli/lenschool',
+    logo: '/lenschool.png',
+  },
+  {
     title: 'Gumrua',
     description:
       'Web3 Gumroad, the easiest way to sell digital products and educational content with crypto.',

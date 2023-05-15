@@ -33,7 +33,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <H4 className="mb-3">{title}</H4>
         <TextSmall>{description}</TextSmall>
       </main>
-      <footer>
+      {/* <footer>
         <ul className="flex flex-wrap mt-7 gap-1">
           {tags.map((tag) => (
             <li
@@ -44,7 +44,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             </li>
           ))}
         </ul>
-      </footer>
+      </footer> */}
     </div>
   )
 }

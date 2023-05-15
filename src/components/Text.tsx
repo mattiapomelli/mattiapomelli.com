@@ -1,7 +1,8 @@
+import { ReactNode } from 'react'
 import classNames from 'classnames'
 
 interface TextProps {
-  children: string
+  children: ReactNode
   className?: string
 }
 

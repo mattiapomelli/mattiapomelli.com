@@ -13,9 +13,19 @@ const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
       <div className="mt-6">
         <H1 className="mb-3">Hey, I&apos;m Mattia</H1>
         <Text>
-          I&apos;m a blockchain and full stack web developer. I&apos;m focused
-          on learning innovative technologies and building software products
-          that give value to people.
+          I&apos;m a builder nomading around hackathons and creating cool
+          projects in web3. I&apos;m currently working on{' '}
+          <a
+            href="https://knowledgelayer.org/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-primary"
+          >
+            KnowledgeLayer
+          </a>
+          , an open protocol and developer toolkit for building educational
+          platforms. I&apos;m excited about learning innovative technologies and
+          using them to build products that bring value to people.
         </Text>
       </div>
 
