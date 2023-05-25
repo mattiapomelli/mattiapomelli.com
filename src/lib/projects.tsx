@@ -13,6 +13,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: 'ZikiLeaks',
+    description:
+      'A privacy-focused, peer-to-peer WikiLeaks, where whistleblowers can publish leaks and receive donations anonymously.',
+    tags: ['Next.js', 'Lens Protocol', 'Railgun', 'Sismo'],
+    url: 'https://zikileaks.vercel.app/',
+    githubUrl: 'https://github.com/mattiapomelli/zikileaks',
+    logo: '/zikileaks.png',
+  },
+  {
     title: 'Lenschool',
     description:
       'A social learning platform to make online education more fun, collaborative and effective.',
