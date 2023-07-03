@@ -13,7 +13,13 @@ const Footer = () => {
           >
             Github
           </a>
-          <a href="https://twitter.com/mattiapomelli">Twitter</a>
+          <a
+            href="https://twitter.com/mattiapomelli"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Twitter
+          </a>
           <a href="mailto:mattiapomelli@gmail.com">Email</a>
         </div>
       </Container>
