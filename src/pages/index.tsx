@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Post } from 'contentlayer/generated'
 
 import BlogPostPreview from '@/components/BlogPost/BlogPostPreview'
@@ -7,25 +8,23 @@ import { getLatestPosts } from '@/lib/posts'
 import { projects } from '@/lib/projects'
 
 const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
+  const filteredProjects = projects.filter((project) => project.showOnHomepage)
+
   return (
     <>
       {/* Bio */}
       <div className="mt-6">
-        <H1 className="mb-3">Hey, I&apos;m Mattia</H1>
+        <H1 className="mb-6">Hey, I&apos;m Mattia!</H1>
+        <Text>I&apos;m a nomad builder 🌍 🛠️.</Text>
+        <br />
         <Text>
-          I&apos;m a builder nomading around hackathons and creating cool
-          projects in web3. I&apos;m currently working on{' '}
-          <a
-            href="https://knowledgelayer.org/"
-            target="_blank"
-            rel="noreferrer"
-            className="text-primary"
-          >
-            KnowledgeLayer
-          </a>
-          , an open protocol and developer toolkit for building educational
-          platforms. I&apos;m excited about learning innovative technologies and
-          using them to build products that bring value to people.
+          I love to make software that helps people and I&apos;m currently
+          working on SaaS products while travelling around.
+        </Text>
+        <br />
+        <Text>
+          I haven&apos;t had a fixed home for the past few months, but you can
+          find me at most web3 hackathons around Europe.
         </Text>
       </div>
 
@@ -33,12 +32,19 @@ const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
       <div className="mt-12">
         <H3 className="mb-3">Projects</H3>
         <Text className="mb-6">
-          Some of the last projects I&apos;ve been working on.
+          These are some of the last projects that I&apos;ve been working on.
         </Text>
         <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] gap-4">
-          {projects.map((project) => (
+          {filteredProjects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
+        </div>
+        <div className="mt-6 flex justify-center">
+          <Link href="/projects">
+            <a className="text-primary text-center bg-base-200 rounded-lg px-4 py-2">
+              See all projects
+            </a>
+          </Link>
         </div>
       </div>
 
@@ -46,7 +52,7 @@ const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
       <div className="mt-12">
         <H3 className="mb-3">Posts</H3>
         <Text className="mb-6">
-          Some posts that I&apos;ve written about coding and web development.
+          Some posts that I&apos;ve written about web development.
         </Text>
         <div className="flex flex-col gap-8">
           {latestPosts.map((post) => (

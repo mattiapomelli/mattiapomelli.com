@@ -43,9 +43,9 @@
   --primary: #086DFF;
   --secondary: #EDF2F7;
   --text-primary: #343A40;
-  --text-secondary: #575757;
+  --text-secondary: #727272;
   --base-100: #FFFFFF;
-  --base-200: #E5E7EB;
+  --base-200: #eaebed;
 }
 
 :root.dark {

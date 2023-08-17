@@ -1,5 +1,5 @@
-const title = 'Mattia Pomelli - Web Developer'
-const description = 'Blockchain & Full Stack Web Developer.'
+const title = 'Mattia Pomelli'
+const description = 'Nomad Builder'
 const url = 'https://tiapome.com'
 const image = `${url}/static/images/banner.png`
 

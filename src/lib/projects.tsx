@@ -1,4 +1,3 @@
-import CapazLogo from '@/icons/capaz.svg'
 import CodeshareLogo from '@/icons/codeshare.svg'
 import CryviaLogo from '@/icons/cryvia.svg'
 
@@ -9,9 +8,40 @@ export interface Project {
   url: string
   githubUrl?: string
   logo: string | (({ className }: { className: string }) => JSX.Element)
+  showOnHomepage?: boolean
+  hackathon?: boolean
 }
 
 export const projects: Project[] = [
+  {
+    title: 'Buildshare',
+    description:
+      'Your assistant for building in public: automatically post on socials when you ship new features.',
+    tags: [],
+    url: 'https://buildshare.io/',
+    logo: '/buildshare.png',
+    showOnHomepage: true,
+  },
+  {
+    title: 'KnowledgeLayer',
+    description:
+      'An open protocol and developer toolkit for building Web3 educational platforms.',
+    tags: [],
+    url: 'https://www.knowledgelayer.org/',
+    githubUrl: 'https://github.com/knowledgelayer',
+    logo: '/knowledgelayer.png',
+    showOnHomepage: true,
+  },
+  {
+    title: 'DAOChat',
+    description:
+      'A platform to manage and participate in DAO governance through a wallet-to-wallet group chat.',
+    tags: [],
+    url: 'https://daochat-app.vercel.app/',
+    githubUrl: 'https://github.com/mattiapomelli/dao-chat',
+    logo: '/daochat.webp',
+    hackathon: true,
+  },
   {
     title: 'ZikiLeaks',
     description:
@@ -20,6 +50,26 @@ export const projects: Project[] = [
     url: 'https://zikileaks.vercel.app/',
     githubUrl: 'https://github.com/mattiapomelli/zikileaks',
     logo: '/zikileaks.png',
+    hackathon: true,
+  },
+  {
+    title: 'BeeTogether',
+    description:
+      'An all-in-one platform to launch and manage your own service DAO or freelance collective in web3',
+    tags: [],
+    url: 'https://prompthunt.vercel.app/',
+    githubUrl: 'https://github.com/prompt-hunt',
+    logo: '/beetogether.png',
+    hackathon: true,
+  },
+  {
+    title: 'PromptHunt',
+    description: 'An open and collaborative repository of AI prompts',
+    tags: [],
+    url: 'https://prompthunt.vercel.app/',
+    githubUrl: 'https://github.com/prompt-hunt',
+    logo: '/prompthunt.png',
+    hackathon: true,
   },
   {
     title: 'Lenschool',
@@ -29,6 +79,7 @@ export const projects: Project[] = [
     url: 'https://lenschool.vercel.app/',
     githubUrl: 'https://github.com/mattiapomelli/lenschool',
     logo: '/lenschool.png',
+    hackathon: true,
   },
   {
     title: 'Gumrua',
@@ -38,6 +89,7 @@ export const projects: Project[] = [
     url: 'https://betterpc.vercel.app/',
     githubUrl: 'https://github.com/TalentLayer-Labs/betterpc',
     logo: '/gumrua.webp',
+    hackathon: true,
   },
   {
     title: 'BetteRPC',
@@ -47,6 +99,7 @@ export const projects: Project[] = [
     url: 'https://betterpc.vercel.app/',
     githubUrl: 'https://github.com/TalentLayer-Labs/betterpc',
     logo: '/betterpc.png',
+    hackathon: true,
   },
   {
     title: 'Capaz',
@@ -56,6 +109,7 @@ export const projects: Project[] = [
     url: 'https://capazpay.eth.limo/',
     githubUrl: 'https://github.com/TalentLayer-Labs/capaz',
     logo: '/capaz.png',
+    hackathon: true,
   },
   {
     title: 'Leets',
@@ -69,7 +123,7 @@ export const projects: Project[] = [
   {
     title: 'Cryvia',
     description:
-      'Test your web3 knowledge and win crypto prizes participating to live quiz contests',
+      'Test your web3 knowledge and win crypto prizes participating to live quiz contests.',
     tags: [
       'Next.js',
       'Tailwind CSS',
@@ -85,7 +139,7 @@ export const projects: Project[] = [
   {
     title: 'Codeshare',
     description:
-      'A platform where developers can share their best code snippets and find solutions to coding problems',
+      'A platform where developers can share their best code snippets and find solutions to coding problems.',
     tags: ['Next.js', 'Styled-components', 'GraphQL', 'PostgreSQL', 'Hasura'],
     url: 'https://codeshare.tech/',
     githubUrl: 'https://github.com/mattiapomelli/codeshare',
