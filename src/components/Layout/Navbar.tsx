@@ -34,6 +34,18 @@ const Navbar = () => {
               projects
             </a>
           </Link>
+          <Link href="/blog">
+            <a
+              className={cx(
+                'font-medium',
+                router.pathname === '/blog'
+                  ? 'underline'
+                  : 'text-text-secondary',
+              )}
+            >
+              blog
+            </a>
+          </Link>
           <a
             href="https://mattiapomelli.substack.com/"
             target="_blank"

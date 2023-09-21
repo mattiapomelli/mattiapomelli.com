@@ -1,0 +1,371 @@
+---
+title: From no idea to the finals - My Nights & Weekends S4 journey
+date: 2023-09-19
+excerpt: Here's the story of how I started N&W S4 without an idea to build, went viral on Twitter but got disappointing results, and then made it to the finals.
+---
+
+Yo!
+
+It’s been a while hehe.
+
+I know, I said I was gonna write a post for this newsletter once a week, but I failed. But hey, the past few weeks have honestly been pure hustle. So... I guess I’m excused… maybe.
+
+Anyways! I left you a few weeks ago, when I had just started [Nights & Weekends S4 (N&W)](https://buildspace.so/nights-weekends). In case you don’t know about Nights & Weekends (seriously? you don’t know about it yet?! wtf?!), it’s a 6-week online school for people who want to work on their ideas. You choose an idea, and you build it publicly over 6 weeks, sharing your progress on social media along with thousands of other people. At the end, the top 32 builders compete in a live gameshow where the top 4 take home $25,000 each.
+
+Nights & Weekends S4 just ended. It’s been a truly amazing ride. Let’s go back to the beginning - here I’ll share with you my journey over the past 6 weeks! Let’s go 🚀.
+
+## The idea
+
+I started Nights & Weekends S4 without having an idea to build. So, during the first few days, I had to come up with something. However, I really had no clue what I wanted to work on.
+
+I started to look around for inspiration. I looked at what other builders were working on, I searched for interesting projects on ProductHunt, I googled around. I came up with few concepts, but nothing was really feeling that exciting.
+
+Tired of not getting results, I decided to just stop and build one of the concepts I thought of earlier. And suddenly, I started to get more and more inspired. By just "doing” rather then “searching”, I was starting to come up with more exciting ideas.
+
+I also brainstormed with my girlfriend and that was super helpful too! By sharing my thoughts with her, we came up with new ideas that I hadn’t thought about. And in the end, I had a few options which seemed pretty exciting.
+
+The first N&W lecture came. I was super excited. I wanted to start well!
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/lecture1.png`}
+  width={1000}
+  height={650}
+/>
+
+The first workshop is always about ideas, and people have to decide what to work on for the 6 weeks and share their idea on social media.
+
+When Farza (the host of N&W, in case you don’t know) said “alright, now post your idea on Twitter”, I actually didn’t know yet which idea to pick amongst the few ones I had.
+
+I said “fuck it” and followed my gut. I chose the one that seemed the most exciting to me at the moment, without thinking about it too much.
+
+About one year ago, I started to build in public and share my work on social media. It was with Nights & Weekends S1! Building in public really changed me as a builder. It helped me to be more motivated and even get more reach for my projects. 
+
+That brings me to S4 - for this season of Nights & Weekends, I decided to work on **a tool to help developers like me build in public and share their work on socials**!
+
+If that sounds “generic”, it was, initially, haha. I had so many ideas for tools for building in public and I didn’t want to commit to just one at the beginning. 
+
+When I shared about my idea on Twitter, **the post blew up**, becoming my most viral tweet ever. 400+ likes and 20,000+ views 🤯. Tens of people were commenting stuff like “I need this now”, “I’ll be your first user”, etc. Just wild.
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/idea-slide-with-comments.png`}
+  width={1341}
+  height={816}
+/>
+
+I stayed up until 1am to reply to every single comment. I was super excited, and seeing all this hype I decided to quickly make a waitlist and I sent the link to every single person who was interested. The waitlist got 100+ signups within the next day! It was time to build.
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/waitlist.png`}
+  width={1409}
+  height={809}
+  caption={"The shitty waitlist website that I shipped in ~10 minutes. It wasn’t even a real mailing list… it just saved emails in a database."}
+/>
+
+
+On the first “lab” lecture of N&W, my idea got reviewed. Some people wanted more clarity. And I agreed, the idea was veeery broad. Upon receiving feedback, I decided to narrow down the idea to a specific use case: a tool to **automatically generate announcements for social media when you release new features.**
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/idea-slide-refactor.png`}
+  width={540}
+  height={742}
+  caption="The new idea slide which I came up with after receiving feedback at lab #1."
+/>
+
+
+The workflow for the user is:
+
+1. Enter some info about a project you’re building
+2. Connect the [Github](https://github.com/) repository of your project
+3. Ship a new feature by either merging a pull request or pushing a commit (These are just fancy Github terms to say that you’re adding some new functionality to your app)
+4. Get a tweet generated automatically with [GPT](https://openai.com/) to announce the new feature
+
+## Entering build mode
+
+I wanted to ship a first version of the product quickly, before the hype vanished. So, during the weekend **I went into hardcore build mode.** I picked up my loved [Next.js starter](https://github.com/mattiapomelli/next13-starter), the GitHub Documentation, and got to work.
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/coding.png`}
+  width={1400}
+  height={1200}
+  caption="Yes, I'm crazy."
+/>
+
+
+I was extremely excited. **I hadn’t felt this excited about building something for a while**. Every day I woke up early and the first thing that I thought about was building. I even forgot to have breakfast multiple times (which usually never happens) 🤦‍♂️.
+
+After a few days of hard work, the first version of the product was ready! I decided to name it Buildshare, bought a domain and prepared for the launch. The plan was to send an email to all the people on the waitlist and make a post on Twitter with a video demo of the product.
+
+On Tuesday, right before N&W lecture 2, I launched 🚀! The post did pretty well. 200+ likes and over 10k views.
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/launch1.png`}
+  width={599 * 0.75}
+  height={804 * 0.75}
+/>
+
+
+However, not many people were signing up… and after a day, less than 20 people had created an account on Buildshare.
+
+I was confused. Where were all the people who were begging me to build this? Where was all the excitement gone? Sure, I had to make my idea much more specific so some people might have lost the interest. But how did it get from hundreds of likes to 100+ waitlist users and then to ~20 signups…?
+
+This seems super disappointing, but honestly it’s just how it works.
+
+I never had such a viral post, but I learned that the excitement that you see on Twitter doesn’t really matter. Everyone can just comment *“omggg this is sooo cool! I would use it right now and pay you $100/day!!!!”*. **But in reality, very few people actually do what they say**. That’s just how humans are.
+
+**So, instead of crying and getting angry because people lie, I just got back to work :)**
+
+## User feedback & iteration
+
+Even though I didn’t get many users, I did get some. So I figured that i**t would have been helpful to understand why the hell those people even signed up and what they were expecting from the product.**
+
+So that’s what I did. I reached out to them and started asking them questions. But doing user interviews through chat is honestly kinda stupid. A message doesn’t really convey what people mean, what’s their mood, if they thought about the answer for long, etc. It can easily end up in a bunch of lies or misunderstandings. And I had enough of people lying hehe.
+
+So, **I personally asked my users to hop on a call with me and turns out that many were happy to help!** I took calls with several users, where I asked them a bunch of questions about their experience as developers and with posting about their work on socials. I even asked them to use the product in front of my eyes, which was super super helpful.
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/calls.png`}
+  width={1315}
+  height={841}
+/>
+
+Thanks to these calls and to feedback that I was receiving on Twitter, **I started to understand what people seemed to want and how I could make the product better.**
+
+For example, in the first version of Buildshare, an announcement tweet was generated automatically when you merged a pull request (fancy Github terms again). However, I learned that most of my users were solo devs, and they didn’t really use pull requests (which is more of a team workflow thing). They would rather have a commit (Github slang once more) to trigger the generation of a post.
+
+**I started to build new features and launch on Twitter consistently every few days**, while making sure to still talk with users.
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/twitter-launches.png`}
+  width={1723}
+  height={520}
+/>
+
+
+The more I built and shipped, the more users were signing up. Even though it was slow, I was growing.
+
+## Launching everywhere
+
+So far I had only launched on Twitter, Linkedin and TikTok and that’s what had got me my first users. But after a while, it was time to change strategy. 
+
+A quote from one of N&W lectures that I loved is **“Posting on Twitter is like screaming in the street asking people to use your product”**. And that’s so damn true. On Twitter pretty much everyone hangs out. From developers, to artists, politicians, content creators. Wtf. It’s kinda hard to get in front of the right people!
+
+**If you’re building a product that serves a specific audience (which you should), you should be posting were those people that you’re building for hang out!**
+
+In my case, I figured that the people that would most likely use my product were indie hackers. That’s because they are usually developers, so they use tools like Github. And they often share about their work on socials to find users or simply talk about their journey.
+
+So I made a big list of places where indie hackers hang out and where I could launch. I initially posted about Buildshare in Discord servers and subreddits for indie hackers. Then, I launched on HackerNews. None of these did amazing but I managed to get some new users.
+
+I also decided to personally reach out to indie hackers who talk about building in public. I DMd more than 60 people on Twitter and some of them replied and gave me really good feedback.
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/launches.png`}
+  width={2238}
+  height={933}
+  caption="Just a few of the discords/subreddits I've launched into and DMs I've sent out"
+/>
+
+Finally, it was time for launching on **ProductHunt**. This is kind of a big one. For some reason, people think of launching on ProductHunt as something huge and they spend weeks preparing. It might make sense, but I definitely had no time for this. I started to prepare the launch two days before and I did most of the work while travelling on a train + plane with terrible wifi haha.
+
+I also found out that a guy in Nights & Weekends ([Max](https://twitter.com/MaxPrilutskiy), he’s great!) was offering his help to launch on ProductHunt, since he has a large following there. So I reached out to him and he agreed on helping me with the launch, by “hunting” my product. This means that he would be the one posting about Buildshare and all his followers would get a notification about it.
+
+The launch went pretty well and Buildshare ended up being 9th product of the day! It was my most successful launch on ProductHunt ever (not that I’ve done many hehe)!
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/producthunt-launch.png`}
+  width={1122}
+  height={881}
+/>
+
+After all this work, more than 100 users had signed up to Buildshare!
+
+I know, it’s not a massive number. But honestly I’m really happy with the result because I’ve put a lot of effort and I have been growing consistently each week. And that’s what matters. **If you keep getting better and better every day, eventually you will do big things.**
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/chart.png`}
+  width={781 * 0.75}
+  height={477 * 0.75}
+/>
+
+
+## Road to the finals
+
+At the end of the 6 weeks, I was really proud of the progress that I had made.
+
+But that was not the end. Because few days later, I got this email.
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/email1.png`}
+  width={2378}
+  height={906}
+/>
+
+Yes!!!!! I had a chance to make it to final 32! I was extremely happy, because that meant that I wasn’t the only one who had noticed my progress.
+
+But I hadn’t made it yet... I had to submit two videos and the Buildspace team would have chosen the top 32 out of all the candidates. The first video had to be a demo of my project, and the second one had to explain my progress over the 6 weeks and what I would do if I won $25k.
+
+I spent the whole day working on the videos: from writing the script, to recording and editing. I wanted them to be super good. Also, for those who don’t know, I used to be a filmmaker! So it was a great opportunity to get back to this hobby that I still love! And luckily, on those days I was back at home for visiting my family so I even had all my equipment available!
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/video.png`}
+  width={1588}
+  height={749}
+  caption="Recording + Editing the two videos!"
+/>
+
+I stayed up until 4am to finish the editing. And at the end, I was super proud of the result. I went to bed super tired, but extremely happy too.
+
+And two days later, another email hits my inbox.
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/email2.png`}
+  width={2378}
+  height={1180}
+/>
+
+
+Fuck yeaaaah!! It was getting real! I was actually in the finals. Out of 17,000 builders who started this journey, I was one of the top 32 who got selected and I had a chance to win $25k. That was already a massive win to me. But since I was there, I now had to go till the end!
+
+In case you don’t know, the Final 32 it’s a live show where builders “compete” 1 vs 1 and the audience votes on who passes to the next round. In order to decide, the audience is presented with 2 videos by each builder showcasing their project and the progress made during the 6 weeks. After two rounds, 8 people are left and the Buildspace team chooses the top 4 which get the $25k.
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/bracket.png`}
+  width={3024}
+  height={1964}
+/>
+
+The other 31 people who got selected were all super cool. And the projects were really impressive too. The competition was tough! I needed support, so I spent hours preparing another video to post on socials, where I asked people to come support me. I also asked my family and some friends to come vote for me (i just had to tell them that I would offer dinner & drinks if I won the money haha. Nah just kidding they did it because they love me ❤️).
+
+## The Final 32
+
+The time arrives. It’s Sunday evening in Italy. Particularly, it’s time for dinner, but the last thing I’m thinking about is dinner at the moment. The Final 32 has started.
+
+After many super interesting and exciting face-offs, my turn arrives. And guess what? The first bracket is me vs Max. Yeah… the guy who I met few days ago on Twitter who helped me with the ProductHunt launch! That kinda sucks honestly, because if there is a particular person that I’m rooting for, it’s exactly him! I just really appreciated that he offered his help with nothing in return. And his project [Notionlytics](https://notionlytics.com/en) is also super cool!
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/round1.png`}
+  width={1000}
+  height={650}
+/>
+
+The videos end, and the voting starts. The score is super close, but Notionlytics is winning with around 51%-49%.
+
+The time starts to run out… and the countdown starts. My heart is beating so fast.
+
+3… 2… 1…
+
+WTF.
+
+I scream. I can’t believe it.
+
+Buildshare overtook Notionlytics at the last second going from 49% to 51% of votes and winning!
+
+I don’t know what happened. I don’t know who the fuck decided at the last second to vote for me. But it happened. If I had couple friends less I would have probably lost 😂. But I’m so happy. And my heart is going crazy.
+
+{/* <video controls>
+  <source src="/static/images/from-no-idea-to-nw-s4-finals/round1-video.mov" type="video/mp4" />
+</video> */}
+
+One round is done! But there’s another to go.
+
+I relax a bit while watching other face-offs, but shortly after, it’s time for my second round! This time it’s Buildshare vs [Linkcollect](https://linkcollect.io/), another super cool project which I really like.
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/round2.png`}
+  width={1000}
+  height={649}
+/>
+
+The voting begins. It’s super close again but this time Buildshare is winning with 51%-49%!
+
+The score seems sort of stable, even though my heart is definitely not.
+
+The countdown starts. 3… 2… 1…
+
+Oh shit.
+
+Linkcollect got some extra votes last second and it’s now 50%-50%.
+
+I’m freakin out. Farza (the host of N&W and Final 32, in case you don’t know) checks the exact count of votes…
+
+…and Buildshare won! It was super close but we made it.
+
+{/* <video controls>
+  <source src="/static/images/from-no-idea-to-nw-s4-finals/round2-video.mov" type="video/mp4" />
+</video> */}
+
+This means that I’m in the top 8! Now it’s not on the audience anymore. The Buildspace team will decide the 4 people out of the 8 who will get the prize.
+
+They take a 5 minutes break and shortly after they’re back with the results.
+
+The first three winners get announced. It’s not me… But there’s still one left.
+
+Farza starts to announce it: “this person has been around for so long…”
+
+I throw up my hands. I think that’s me! I’ve been involved with Buildspace since even before Nights & Weekends existed, back when they were doing (fuckin good) tutorials about Web3. It must be me! My heart is going crazy.
+
+“…and the last winner is…”
+
+…
+
+The expression on my face changes. The name I heard was not mine.
+
+I couldn’t believe it. The likelihood was super low, but it turns out there was another Buildspace veteran who I didn’t know among the top 8.
+
+And that was the end of S4. 
+
+## What’s next?
+
+Not gonna lie, immediately after the winners were announced, I felt kinda demoralized for a bit. I had got so close… to not make it.
+
+But after a few minutes, I recover. And I smile.
+
+I got to the top 8 of 17,000 builders. How the fuck can I be disappointed?! And honestly it doesn’t even matter if I’m top 8, top 100 or top whatever. Just the fact that I gave this a shot and made it to the end is already huge. I have to be extremely proud of what I achieved.
+
+If you’re crazy enough to work on your own ideas, you’ve already won to me. Most people are just too scared to even get started. They find excuses, saying that it’s hard. They say they’d need more money, or a big network, or to live in another place. That’s just bullshit. 
+
+**All you need is to trust yourself.**
+
+**So if you even just started to work on an idea that you have, you’re already winning.**
+
+I stop and think about how my life could have changed tonight, if I had made it into the top 4. $25k would have been super helpful - especially because I’m considering applying to attend Buildspace campus in San Francisco, and that city is so damn expensive (seriously, a fuckin sandwich at the supermarket costed me $8 the last time I was there, don’t wanna know about housing 😨).
+
+However, I’m sure there are a lot people in Nights & Weekends who need this money more than me. So, I really hope that those who won really need it and that it will help them to keep working on their ideas!
+
+In the end, **money can definitely help, but nothing can stop you when you really want something.**
+
+So, whatever the result would had been, not much would have changed tonight. I’m still that guy who dreams of making a living by working on his ideas, and will do anything to make it happen. **With $25k more in my bank account, I’d be exactly the same.**
+
+Honestly, after tonight, I feel even more motivated to keep building. Seeing that people were supporting and rooting for me gave me so much joy. It’s good to see that someone appreciates what you do.
+
+Thanks to everyone who voted for me, and even to those who didn’t. You all are just the best 💛
+
+See ya in s5 frens.
+
+Peace.
+
+<div>- Mattia</div>
+<br />
+
+<Image
+  alt={`Image`}
+  src={`/static/images/from-no-idea-to-nw-s4-finals/me.png`}
+  width={1920}
+  height={1080}
+/>

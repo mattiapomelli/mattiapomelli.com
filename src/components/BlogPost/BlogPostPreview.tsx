@@ -6,7 +6,7 @@ import { H4, Text } from '../Text'
 
 const BlogPostPreview = ({ post }: { post: Post }) => {
   return (
-    <Link href={`/posts/${post.slug}`}>
+    <Link href={`/blog/${post.slug}`}>
       <a>
         <article>
           <H4 className="mb-1.5">{post.title}</H4>

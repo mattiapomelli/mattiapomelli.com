@@ -52,7 +52,8 @@ const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
       <div className="mt-12">
         <H3 className="mb-3">Posts</H3>
         <Text className="mb-6">
-          Some posts that I&apos;ve written about web development.
+          Some posts that I&apos;ve written about web development and my builder
+          journey.
         </Text>
         <div className="flex flex-col gap-8">
           {latestPosts.map((post) => (
