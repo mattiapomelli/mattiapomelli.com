@@ -13,7 +13,7 @@ export default function Document() {
         />
         <meta
           name="twitter:image"
-          content="https://tiapome.com/static/images/banner.png"
+          content="https://mattiapomelli.com/static/images/banner.png"
         />
         <meta name="twitter:image:alt" content="Web Development" />
         <link

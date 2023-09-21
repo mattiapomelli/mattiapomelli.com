@@ -4,7 +4,7 @@ import { Post } from 'contentlayer/generated'
 const BlogPostSeo = ({ post }: { post: Post }) => {
   const { slug, title, excerpt, date } = post
   const publishedTime = new Date(date).toISOString()
-  const url = `https://tiapome.com/posts/${slug}`
+  const url = `https://mattiapomelli.com/blog/${slug}`
 
   return (
     <>
@@ -23,7 +23,7 @@ const BlogPostSeo = ({ post }: { post: Post }) => {
           images: post.image
             ? [
                 {
-                  url: `https://tiapome.com/static/images/${post.slug}/${post.image}`,
+                  url: `https://mattiapomelli.com/static/images/${post.slug}/${post.image}`,
                 },
               ]
             : [],

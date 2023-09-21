@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://tiapome.com',
+  siteUrl: 'https://mattiapomelli.com',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
 }

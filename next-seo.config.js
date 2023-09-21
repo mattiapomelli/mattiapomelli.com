@@ -1,6 +1,6 @@
 const title = 'Mattia Pomelli'
 const description = 'Nomad Builder'
-const url = 'https://tiapome.com'
+const url = 'https://mattiapomelli.com'
 const image = `${url}/static/images/banner.png`
 
 const SEO = {

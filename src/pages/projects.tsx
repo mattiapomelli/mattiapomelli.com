@@ -5,7 +5,7 @@ import ProjectCard from '@/components/ProjectCard'
 import { H3, Text } from '@/components/Text'
 import { projects } from '@/lib/projects'
 
-const url = 'https://tiapome.com/posts'
+const url = 'https://mattiapomelli.com/projects'
 const title = 'Projects – Mattia Pomelli'
 const description = 'Projects I have worked on.'
 
