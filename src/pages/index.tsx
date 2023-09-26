@@ -50,7 +50,7 @@ const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
 
       {/* Posts */}
       <div className="mt-12">
-        <H3 className="mb-3">Posts</H3>
+        <H3 className="mb-3">Last Posts</H3>
         <Text className="mb-6">
           Some posts that I&apos;ve written about web development and my builder
           journey.

@@ -13,5 +13,5 @@ export const getAllPostSlugs = () => {
 }
 
 export const getLatestPosts = () => {
-  return getAllPosts().slice(0, 3)
+  return getAllPosts().slice(0, 2)
 }
