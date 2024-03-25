@@ -19,13 +19,13 @@ const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
         <br />
         <Text>
           I love to make software that helps people and I&apos;m currently
-          working on SaaS products while travelling around.
+          working on AI SaaS products while travelling around.
         </Text>
         <br />
-        <Text>
+        {/* <Text>
           I haven&apos;t had a fixed home for the past few months, but you can
           find me at most web3 hackathons around Europe.
-        </Text>
+        </Text> */}
       </div>
 
       {/* Projects */}

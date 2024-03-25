@@ -14,6 +14,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: 'Supadash',
+    description:
+      'Get an AI-generated dashboard to visualize your database data in seconds.',
+    tags: [],
+    url: 'https://www.supadash.co/',
+    logo: '/supadash.png',
+    showOnHomepage: true,
+  },
+  {
     title: 'Buildshare',
     description:
       'Your assistant for building in public: automatically post on socials when you ship new features.',
@@ -30,7 +39,7 @@ export const projects: Project[] = [
     url: 'https://www.knowledgelayer.org/',
     githubUrl: 'https://github.com/knowledgelayer',
     logo: '/knowledgelayer.png',
-    showOnHomepage: true,
+    showOnHomepage: false,
   },
   {
     title: 'DAOChat',

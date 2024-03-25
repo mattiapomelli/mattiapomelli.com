@@ -39,7 +39,7 @@ const ProjectsPage = () => {
 
       <H3 className="mt-20 mb-3">Hackathon projects</H3>
       <Text className="mb-5">
-        Some stuff that I built during Web3 hackathon
+        Some stuff that I built during Web3 hackathons.
       </Text>
 
       <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] gap-4">
