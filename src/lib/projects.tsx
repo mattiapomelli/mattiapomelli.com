@@ -14,6 +14,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: 'Reweb',
+    description: 'A visual website builder for Next.js and Tailwind CSS.',
+    tags: ['Next.js', 'Tailwind CSS', 'Supabase', 'Shadcn/UI'],
+    url: 'https://reweb.so/',
+    logo: '/reweb.png',
+    // showOnHomepage: true,
+  },
+  {
     title: 'Supadash',
     description:
       'Get an AI-generated dashboard to visualize your database data in seconds.',
@@ -34,7 +42,7 @@ export const projects: Project[] = [
   {
     title: 'KnowledgeLayer',
     description:
-      'An open protocol and developer toolkit for building Web3 educational platforms.',
+      'An open protocol and developer toolkit for building Web3 digital product marketplaces.',
     tags: [],
     url: 'https://www.knowledgelayer.org/',
     githubUrl: 'https://github.com/knowledgelayer',

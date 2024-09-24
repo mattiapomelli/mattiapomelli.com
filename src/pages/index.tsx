@@ -45,7 +45,7 @@ const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
       <div className="mt-12">
         <H3 className="mb-3">Projects</H3>
         <Text className="mb-6">
-          These are some of the last projects that I&apos;ve been working on.
+          Some other projects that I&apos;ve been working on in the past.
         </Text>
         <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] gap-4">
           {filteredProjects.map((project) => (
