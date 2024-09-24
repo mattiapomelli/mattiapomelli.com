@@ -15,11 +15,24 @@ const HomePage = ({ latestPosts }: { latestPosts: Post[] }) => {
       {/* Bio */}
       <div className="mt-6">
         <H1 className="mb-6">Hey, I&apos;m Mattia!</H1>
-        <Text>I&apos;m a nomad builder 🌍 🛠️.</Text>
+        <Text>
+          I&apos;m currently working on{' '}
+          <a
+            href="https://reweb.so"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:underline"
+          >
+            Reweb
+          </a>
+          , a visual website builder for developers and designers. I like to
+          build tools for creatives. I hope that what I build can empower people
+          to express their creativity and make their ideas come to life.
+        </Text>
         <br />
         <Text>
-          I love to make software that helps people and I&apos;m currently
-          working on AI SaaS products while travelling around.
+          I&apos;m nomad 🌍. I haven&apos;t had a fixed home for the past 2
+          years. I love travelling and living crazy adventures.
         </Text>
         <br />
         {/* <Text>
